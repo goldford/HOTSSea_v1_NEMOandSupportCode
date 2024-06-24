@@ -1,0 +1,59 @@
+# RUN203 vs RUN204
+
+# Directory to store comparisons
+output_path: /home/mdunphy/project/mdunphy/ANALYSIS/SalishSea1500-RUN203_vs_RUN204
+
+# Models to compare and colours associated with each
+mods:
+  - optfile: SalishSea1500-RUN203.yaml
+    color:  'g'
+    marker: 'o'
+    lineweight: 1
+
+  - optfile: SalishSea1500-RUN204.yaml
+    color:  'r'
+    marker: 'o'
+    lineweight: 1
+
+
+analysis:
+    periods:
+        year1979: [1979-01-01, 1980-01-01]
+        year1980: [1980-01-01, 1981-01-01]
+        year1981: [1981-01-01, 1982-01-01]
+        year1982: [1982-01-01, 1983-01-01]
+        year1983: [1983-01-01, 1984-01-01]
+        year1984: [1984-01-01, 1985-01-01]
+        year1985: [1985-01-01, 1986-01-01]
+        year1986: [1986-01-01, 1987-01-01]
+        year1987: [1987-01-01, 1988-01-01]
+        year1988: [1988-01-01, 1989-01-01]
+
+# Settings for each instrument comparison
+TG:
+    # for tidal constituents
+    constituents: ['M2', 'N2', 'S2', 'O1', 'K1', 'P1', 'Q1', 'K2']
+    exclude: []
+    #exclude: ['NewWestminster','VancouverHarbour']
+
+    figsize: [5, 6]
+    layout: 2 # with differences in separate panels
+
+    # for residual
+    # Station names in tide gauge list (with underscores removed)
+    #stations: ["08MH028","08MH053","New Westminster", "Sand Heads", "Steveston", "StevestonEC", "Woodward's Landing"]
+
+    # cutoff period for a low-pass filter (days), set to None for no smoothing
+    smooth_residual_diff: 5 # apply 5-day smoother
+
+HTG:
+    figsize: [12, 6]
+
+
+CTD:
+    domain_file: CTD_analysis_domain_config_template-SalishSea.yml
+
+
+# Override some options
+parallel: True
+nproc: 44

@@ -1,0 +1,74 @@
+## Reference comparison config file
+## This sets the default comparison parameters akin to NEMO's namelist_ref
+
+# Some plotting is parallelized
+parallel: True
+nproc: 44
+
+output_path: setme
+
+verbose: 0
+
+# Used in plotting titles
+configname:  setme
+
+
+
+# Models to compare and colours associated with each
+# This list can be longer than two models
+mods:
+  - optfile: setme
+    color:  'r'
+    marker: 'o'
+    lineweight: 1
+
+  - optfile: setme
+    color:  'b'
+    marker: 'o'
+    lineweight: 1
+
+# Default instruments to process
+instruments: ['CTD', 'LH', 'SST']
+
+### ANALYSIS ###
+#analysis:
+#    periods:
+#        year2017: [2017-01-01, 2018-01-01]
+#        year2018: [2018-01-01, 2019-01-01]
+
+
+### PLOTTING ###
+plot:
+    figure_layout: 'page'
+    map:  # default is national
+        xlim: [-136.0, -50.0]
+        ylim: [  40.0,  56.0]
+    legend: 'map'
+
+
+
+# Settings for each instrument comparison
+SST:
+    histogram_bins: 10
+
+CTD:
+   domain_file: setme
+   # minimum number of casts required for bias and RMSE in a region to be included
+   minimum_samples_per_region: 5
+
+# Observation locations on the map
+OBS:
+    dx: -0.4
+    dy: 0.04
+    instruments:
+      - ['SST']
+      - ['LH']
+      - ['SST']
+
+score:
+  save_csv: True   # Save comparison scores in CSV files
+  save_xlsx: True  # Save comparison scores in XLSX files
+  save_tex: True   # Save comparison scores in LATEX files
+
+# File formats for saving figures. Should be supported by plt.savefig()
+file_formats: ['png', 'pdf', 'svg']

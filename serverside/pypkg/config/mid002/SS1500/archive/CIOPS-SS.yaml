@@ -1,0 +1,68 @@
+# Comparison between CIOPS-W, SalishSea500, and SalishSea1500
+
+# Directory to store comparisons
+output_path: /home/mid002/WORK4/SalishSea1500/ANALYSIS/CIOPS-SS
+
+# Models to compare and colours associated with each
+mods:
+#    - optfile: SalishSea500-BC12a7-daily.yaml
+#      color:  'b'
+#      marker: 'o'
+#      lineweight: 1
+
+    - optfile: SalishSea500-201905.yaml
+      color:  'r'
+      marker: 'o'
+      lineweight: 1
+
+    - optfile: SalishSea1500-RUN100.yaml
+      color:  'g'
+      marker: 'o'
+      lineweight: 1
+
+    - optfile: SalishSea1500-RUN160.yaml
+      color:  'm'
+      marker: 'o'
+      lineweight: 1
+
+    - optfile: CIOPSW-BC12.yaml
+      color:  'y'
+      marker: 'o'
+      lineweight: 1
+
+analysis:
+    periods:
+        year2016: [2016-01-01, 2017-01-01]
+        year2017: [2017-01-01, 2018-01-01]
+        year2018: [2018-01-01, 2019-01-01]
+
+    domains: [SalishSea]
+
+# Settings for each instrument comparison
+TG:
+    # for tidal constituents
+    constituents: ['M2', 'N2', 'S2', 'O1', 'K1', 'P1', 'Q1', 'K2']
+    exclude: ['NewWestminster','VancouverHarbour']
+    
+    figsize: [5, 6]
+    layout: 2 # with differences in separate panels
+
+    # for residual
+    # Station names in tide gauge list (with underscores removed)
+    stations: ["Campbell River", "Cherry Point", "Friday Harbour", "Nanaimo Harbour", "Neah Bay", "Patricia Bay", "Point Atkinson", "Port Angeles", "Port Townsend", "Victoria Harbour"]
+    
+    # cutoff period for a low-pass filter (days), set to None for no smoothing
+    smooth_residual_diff: 5 # apply 5-day smoother
+
+CTD:
+    domain_file: CTD_analysis_domain_config_template-SalishSea.yml
+
+CM:
+    stations: ['NDBC_46087', 'NDBC_46088']
+
+HTG:
+    figsize: [12, 6]
+
+# Override some options
+parallel: True
+nproc: 44

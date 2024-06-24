@@ -1,0 +1,157 @@
+# Config file for SS1500 RUN215 - oras bias correction (2nd try)
+config: SalishSea1500
+runid: RUN216
+
+# --- DOMAIN GEOMETRY
+file_bathy:  /project/6006412/mdunphy/Forcing/grid/bathy_salishsea_1500m_20210706.nc
+file_coord: /project/6006412/mdunphy/Forcing/grid/coordinates_salishsea_1500m.nc
+file_mesh:  /project/6006412/mdunphy/Forcing/grid/mesh_mask_20210406.nc
+
+obs:
+    root: /project/6006412/goldford/OBS-WEST
+    name: "OBS-WEST"
+
+output_path: /project/6006412/goldford/ANALYSIS/SalishSea1500-RUN216
+
+src_output_dir: /project/6006412/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN216/CDF
+
+plot:
+    map:
+        xlim: [-126, -122]
+        ylim: [47, 51]
+        
+    #file_formats: ['png', 'pdf', 'svg']
+    file_formats: ['png']
+
+nproc: 44
+
+instruments: ['CTD', 'TG', 'LH', 'SST', 'MCTD']
+
+analysis:
+    periods:
+#        year1979: [1979-01-01, 1980-01-01]
+#        year1980: [1980-01-01, 1981-01-01]
+#        year1981: [1981-01-01, 1982-01-01]
+#        year1982: [1982-01-01, 1983-01-01]
+#        year1983: [1983-01-01, 1984-01-01]
+#        year1984: [1984-01-01, 1985-01-01]
+#        year1985: [1985-01-01, 1986-01-01]
+#        year1986: [1986-01-01, 1987-01-01]
+#        year1987: [1987-01-01, 1988-01-01]
+#        year1988: [1988-01-01, 1989-01-01]
+#        year1989: [1989-01-01, 1990-01-01]
+#        year1990: [1990-01-01, 1991-01-01]
+#        year1991: [1991-01-01, 1992-01-01]
+#        year1992: [1992-01-01, 1993-01-01]
+#        year1993: [1993-01-01, 1994-01-01]
+#        year1994: [1994-01-01, 1995-01-01]
+#        year1995: [1995-01-01, 1996-01-01]
+#        year1996: [1996-01-01, 1997-01-01]
+#        year1997: [1997-01-01, 1998-01-01]
+#        year1998: [1998-01-01, 1999-01-01]
+#        year1999: [1999-01-01, 2000-01-01]
+#        year2000: [2000-01-01, 2001-01-01]
+#        year2001: [2001-01-01, 2002-01-01]
+#        year2002: [2002-01-01, 2003-01-01]
+#        year2003: [2003-01-01, 2004-01-01]
+#        year2004: [2004-01-01, 2005-01-01]
+#        year2005: [2005-01-01, 2006-01-01]
+#        year2006: [2006-01-01, 2007-01-01]
+#        year2007: [2007-01-01, 2008-01-01]
+#        year2008: [2008-01-01, 2009-01-01]
+#        year2009: [2009-01-01, 2010-01-01]
+#        year2010: [2010-01-01, 2011-01-01]
+#        year2011: [2011-01-01, 2012-01-01]
+#        year2012: [2012-01-01, 2013-01-01]
+#        year2013: [2013-01-01, 2014-01-01]
+#        year2014: [2014-01-01, 2015-01-01]
+#        year2015: [2015-01-01, 2016-01-01]
+#        year2016: [2016-01-01, 2017-01-01]
+#        year2017: [2017-01-01, 2018-01-01]
+#        year2018: [2018-01-01, 2019-01-01]
+#        decade80s: [1980-01-01, 1990-01-01]
+#        decade90s: [1990-01-01, 2000-01-01]
+#        decade00s: [2000-01-01, 2010-01-01]
+#        decade10s: [2010-01-01, 2019-01-01]
+#        decadeall: [1980-01-01, 2019-01-01] # a test for dep 
+        hindcast: [1980-01-01, 2019-01-01]
+
+    domains:
+      SalishSea: /project/6006412/goldford/data/grid/coordinates_salishsea_1500m.nc
+
+    ADCP:
+        levels: [8., 15., 50., 100., 250.]
+
+    CTD:
+        # CTD analysis bits, to be reorganized
+        domain_file: /project/6006412/goldford/gitlab_pyap_fork20230331/config/CTD_analysis_domain_config_template-SalishSea.yml
+        std_thres: 2
+    TDL:
+        wtdir: /home/mid002/WORK4/Datasets/WebTide/ne_pac4/
+        wtname: ne_pac4
+
+extract:
+    TG:
+        pattern: '*_1h_grid_T_2D_*'
+        ssh: 'sossheig'
+        exclude: ["*Vancouver*Harbour*"]
+    SST:
+        pattern: '*_1h_grid_T_y[0-9][0-9]*'
+        temperature: 'votemper'
+    MCTD:
+        pattern: '*_1d_grid_T_y[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        exclude: ["*/EF04_*"]
+    LH:
+        pattern: '*_1h_grid_T_y[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        exclude: ["*/EF04_*"]
+    CMCSST:
+        pattern_daily: '*_1d_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+    CTD:
+        pattern: '*_1h_grid_T_y[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        ssh_pattern: '*_1h_grid_T_2D*'
+        ssh: 'sossheig'
+
+    TDL:
+        pattern: '*_1h_grid_T_2D_*'
+        ssh: 'sossheig'
+        patternu: '*_1h_grid_U_2D_*'
+        ubt: 'vobtcrtx'
+        patternv: '*_1h_grid_V_2D_*'
+        vbt: 'vobtcrty'
+    CM:
+        patternu: '*_1h_grid_U_[0-9][0-9]*.nc'
+        patternv: '*_1h_grid_V_[0-9][0-9]*.nc'
+        uvel: 'vozocrtx'
+        vvel: 'vomecrty'
+    ADCP:
+        patternu: '*_1h_grid_U_[0-9][0-9]*.nc'
+        patternv: '*_1h_grid_V_[0-9][0-9]*.nc'
+        uvel: 'vozocrtx'
+        vvel: 'vomecrty'
+        # temporary: first has only 5 days model data available, not enough for ttide (SoG too)
+        #            second and third have same error with chunked ttide, leave for Maxim since he knows how he built it
+        #            not sure what's up with the Fraser Reiver Delta files
+        exclude: ['*/FiveFingers201811_150kHz_ADCP_2018-05_2018-12_265m*',
+                  '*/BoundaryPass_ADCP_2016-10_2017-04_222m*',
+                  '*/JuandeFucaStrait_ADCP_2017-04_2017-11_114m*',
+                  '*/JuandeFucaStrait_ADCP_2016-10_2017-04_55m*',
+                  '*/FraserRiverDeltaLowerSlope_ADCP_20160214-0007_20160430-1952_145m*',
+                  '*/FraserRiverDeltaLowerSlope_ADCP_20171008-0007_20171103-1852_143m*',
+                  '*.FraserRiverDeltaLowerSlope_ADCP_20160101-0007_20160430-1952_148m*',
+                  '*/FraserRiverDeltaLowerSlope_ADCP_20160101-0007_20160213-2352_145m*',
+                  '*/StraitofGeorgiaCentral_ADCP_20180518-2122_20181001-0137_298m*',
+                  '*/HC11_ADCP_20150723-0215_20160522-1615_122m_noSpikes*',
+                  '*/EF04*',   # technically inside the SS grid but it's not in the model's water domain
+        ]
+    FERRY:
+        pattern: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+

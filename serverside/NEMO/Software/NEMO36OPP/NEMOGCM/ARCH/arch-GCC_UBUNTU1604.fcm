@@ -1,0 +1,49 @@
+# OpenMPI gfortran compiler for Ubuntu 16.04
+#
+# NCDF_HOME   root directory containing lib and include subdirectories for netcdf4 built with HDF5
+# XIOS_HOME   root directory containing lib for XIOS
+#
+# NCDF_INC    netcdf4 include file
+# NCDF_LIB    netcdf4 library
+# XIOS_INC    xios include file    (taken into account only if key_iomput is activated)
+# XIOS_LIB    xios library         (taken into account only if key_iomput is activated)
+#
+# FC          Fortran compiler command
+# FCFLAGS     Fortran compiler flags
+# FFLAGS      Fortran 77 compiler flags
+# LD          linker
+# LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries
+# FPPFLAGS    pre-processing flags
+# AR          archiver
+# ARFLAGS     archiver flags
+# MK          make
+# USER_INC    complete list of include files
+# USER_LIB    complete list of libraries to pass to the linker
+#
+# Note that:
+#  - unix variables "$..." are accepted and will be evaluated before calling fcm.
+#  - fcm variables start with a % (and not a $)
+
+%XIOS_HOME           $HOME/NEMO/XIOS-2
+
+%NCDF_INC            -I/usr/include
+%NCDF_LIB            -L/usr/lib -lnetcdff -lnetcdf
+
+%XIOS_INC            -I%XIOS_HOME/inc
+%XIOS_LIB            -L%XIOS_HOME/lib -lxios -lstdc++
+
+%CC                   gcc
+%CFLAGS               -O0
+
+%CPP	             cpp
+%FC                  /usr/bin/mpif90
+%FCFLAGS             -cpp -O3 -fdefault-real-8 -fdefault-double-8 -funroll-all-loops -fcray-pointer -ffree-line-length-none -g
+%FFLAGS              %FCFLAGS
+%LD                  /usr/bin/mpif90
+%LDFLAGS             -lstdc++
+%FPPFLAGS            -P -traditional
+%AR                  ar
+%ARFLAGS             -rs
+%MK                  make
+%USER_INC            %XIOS_INC %NCDF_INC
+%USER_LIB            %XIOS_LIB %NCDF_LIB

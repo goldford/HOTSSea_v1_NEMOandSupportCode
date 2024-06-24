@@ -1,0 +1,68 @@
+# Config file for SS1500 RUN141 (HRDPS, ORAS5)
+config: SalishSea1500
+runid: RUN141
+
+# --- DOMAIN GEOMETRY
+file_bathy:  /project/6006412/mdunphy/Forcing/grid/bathy_salishsea_1500m_20210706.nc
+file_coord: /project/6006412/mdunphy/Forcing/grid/coordinates_salishsea_1500m.nc
+file_mesh:  /project/6006412/mdunphy/Forcing/grid/mesh_mask_20210406.nc
+
+obs:
+    root: /project/6006412/goldford/OBS-WEST
+    name: "OBS-WEST"
+
+output_path: /project/6006412/goldford/ANALYSIS/SalishSea1500-RUN141
+
+src_output_dir: /project/6006412/goldford/nemo_results/SalishSea1500/SalishSea1500-RUN141/CDF
+
+plot:
+    map:
+        xlim: [-126, -122]
+        ylim: [47, 51]
+
+nproc: 44
+
+instruments: ['CTD', 'MCTD', 'SST', 'LH']
+
+analysis:
+    periods:
+        year2016: [2016-01-01, 2017-01-01]
+        year2017: [2017-01-01, 2018-01-01]
+        year2018: [2018-01-01, 2019-01-01]
+        hindcast: [2016-01-01, 2019-01-01]
+
+    domains:
+      SalishSea: /project/6006412/goldford/data/grid/coordinates_salishsea_1500m.nc
+
+
+    CTD:
+        # CTD analysis bits, to be reorganized
+        domain_file: /project/6006412/goldford/gitlab_pyap_fork20230331/config/CTD_analysis_domain_config_template-SalishSea.yml
+
+
+extract:
+
+    SST:
+        pattern: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+    MCTD:
+        pattern: '*_1d_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        exclude: ["*/EF04_*"]
+    LH:
+        pattern: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        exclude: ["*/EF04_*"]
+    CMCSST:
+        pattern_daily: '*_1d_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+    CTD:
+        pattern: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        ssh_pattern: '*_1h_grid_T_2D_*'
+        ssh: 'sossheig'
+
+

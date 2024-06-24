@@ -1,0 +1,72 @@
+config: SalishSea500
+runid: "201905"  # Susan Allen's 201905 hindcast
+
+# --- DOMAIN GEOMETRY
+file_bathy: /project/6006412/goldford/data/grid/etc/bathymetry_201702.nc
+file_coord: /project/6006412/goldford/data/grid/etc/coordinates_seagrid_SalishSea201702.nc
+file_mesh: /project/6006412/goldford/data/mesh_mask/etc/mesh_mask201702MD.nc
+
+obs:
+    root: /project/6006412/goldford/OBS-WEST
+    name: "OBS-WEST"
+
+output_path: /project/6006412/goldford/ANALYSIS/SalishSea500-201905
+
+src_output_dir: /project/6006412/mdunphy/SalishSeaCast/nowcast-green.201905
+
+#time_getter: cmc_start_end
+#start_date: '20160101'
+#final_date: '20181231'
+
+plot:
+    map:
+        xlim: [-126, -122]
+        ylim: [47, 51]
+
+nproc: 44
+
+#instruments: ['CTD', 'MCTD', 'SST', 'LH']
+instruments: ['CTD']
+
+analysis:
+    periods:
+        year2016: [2016-01-01, 2017-01-01]
+        year2017: [2017-01-01, 2018-01-01]
+        year2018: [2018-01-01, 2019-01-01]
+        hindcast: [2016-01-01, 2019-01-01]
+    domains:
+        SalishSea: /project/6006412/goldford/data/grid/etc/coordinates_seagrid_SalishSea201702.nc
+
+    ADCP:
+        levels: [8., 15., 50., 100., 250.]
+
+    CTD:
+        # CTD analysis bits, to be reorganized
+        domain_file: /project/6006412/goldford/gitlab_pyap_fork20230331/config/CTD_analysis_domain_config_template-SalishSea.yml
+
+
+extract:
+
+    
+    SST:
+        pattern: '*_1h_*grid_T*'
+        temperature: 'votemper'
+    MCTD:
+        pattern: '*_1d_*grid_T*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        exclude: ["*/EF04_*"]
+    LH:
+        pattern: '*_1h_*grid_T*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        exclude: ["*/EF04_*"]
+    CMCSST:
+        pattern_daily: '*_1d_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+    CTD:
+        #pattern: '*_1d_*grid_T*'
+        pattern: '*_1d_????????_????????_grid_T*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+    

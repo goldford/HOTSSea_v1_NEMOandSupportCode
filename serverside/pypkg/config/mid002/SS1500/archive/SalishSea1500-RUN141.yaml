@@ -1,0 +1,122 @@
+config: SalishSea1500
+runid: RUN141
+
+# --- DOMAIN GEOMETRY
+file_bathy: /home/mid002/WORK4/SalishSea1500/bathy_salishsea_1500m_20210406.nc
+file_coord: /home/mid002/WORK4/SalishSea1500/coordinates_salishsea_1500m.nc
+file_mesh:  /home/mid002/WORK4/SalishSea1500/mesh_mask_20210406.nc
+
+obs:
+    root: /home/sdfo600/DATA/OBS-WEST
+    name: "OBS-WEST"
+
+output_path: /home/mid002/WORK4/SalishSea1500/ANALYSIS/SalishSea1500-RUN141
+
+src_output_dir: /home/mid002/WORK4/SalishSea1500/graham/SalishSea1500-RUN141/CDF
+time_getter: cmc_start_end
+
+plot:
+    map:
+        xlim: [-126, -122]
+        ylim: [47, 51]
+
+
+
+analysis:
+    periods:
+        year2016: [2016-01-01, 2017-01-01]
+        year2017: [2017-01-01, 2018-01-01]
+        #year2018: [2018-01-01, 2019-01-01]
+    domains:
+      SalishSea1500: /home/mid002/WORK4/SalishSea1500/coordinates_salishsea_1500m.nc
+
+    ADCP:
+        levels: [8., 15., 50., 100., 250.]
+
+    CTD:
+        # CTD analysis bits, to be reorganized
+        domain_file: CTD_analysis_domain_config_template-SalishSea.yml
+    TDL:
+        wtdir: /home/mid002/WORK4/Datasets/WebTide/ne_pac4/
+        wtname: ne_pac4
+
+extract:
+    TG:
+        pattern: '*_1h_grid_T_2D_*'
+        ssh: 'sossheig'
+        #ib: 'sossheig_ib'
+        time_var: time_counter
+        exclude: ["*Vancouver*Harbour*","*New*Westminster*"]
+
+    HTG:
+        pattern: '*_1h_grid_T_2D_*'
+        ssh: 'sossheig'
+        exclude: ["*/07024const*", "*/07060const*", "*/07196const*",
+                  "*/07107const*", "*/07121const*", "*/07122const*", "*/07123const*", "*/07124const*", "*/07125const*",
+                  "*/07370const*",
+                  "*/07710const*", "*/07771const*", "*/07843const*", "*/07844const*",
+                  "*/07852const*", "*/07860const*",
+                  "*/08095const*", "*/08107const*",
+                  "*/08079const*", "*/08087const*", "*/08104const*", "*/08105const*", "*/08110const*",
+                  "*/07442const*", "*/07824const*", "*/07542const*", "*/07861const*"]
+    SST:
+        pattern: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        time_var: time_counter
+    MCTD:
+        pattern: '*_1d_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        time_var: time_counter
+        exclude: ["*/EF04_*"]
+    CTD:
+        pattern: '*_1d_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        time_var: time_counter
+    CMCSST:
+        pattern_daily: '*_1d_grid_T_[0-9][0-9]*'
+        pattern_hourly: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        time_var: time_counter
+    TDL:
+        pattern: '*_1h_grid_T_2D_*'
+        ssh: 'sossheig'
+        patternu: '*_1h_grid_U_2D_*'
+        ubt: 'vobtcrtx'
+        patternv: '*_1h_grid_V_2D_*'
+        vbt: 'vobtcrty'
+        time_var: time_counter
+    CM:
+        patternu: '*_1h_grid_U_[0-9][0-9]*.nc'
+        patternv: '*_1h_grid_V_[0-9][0-9]*.nc'
+        uvel: 'vozocrtx'
+        vvel: 'vomecrty'
+        time_var: time_counter
+    ADCP:
+        patternu: '*_1h_grid_U_[0-9][0-9]*.nc'
+        patternv: '*_1h_grid_V_[0-9][0-9]*.nc'
+        uvel: 'vozocrtx'
+        vvel: 'vomecrty'
+        time_var: time_counter
+        # temporary: first has only 5 days model data available, not enough for ttide (SoG too)
+        #            second and third have same error with chunked ttide, leave for Maxim since he knows how he built it
+        #            not sure what's up with the Fraser Reiver Delta files
+        exclude: ['*/FiveFingers201811_150kHz_ADCP_2018-05_2018-12_265m*',
+                  '*/BoundaryPass_ADCP_2016-10_2017-04_222m*',
+                  '*/JuandeFucaStrait_ADCP_2017-04_2017-11_114m*',
+                  '*/JuandeFucaStrait_ADCP_2016-10_2017-04_55m*',
+                  '*/FraserRiverDeltaLowerSlope_ADCP_20160214-0007_20160430-1952_145m*',
+                  '*/FraserRiverDeltaLowerSlope_ADCP_20171008-0007_20171103-1852_143m*',
+                  '*.FraserRiverDeltaLowerSlope_ADCP_20160101-0007_20160430-1952_148m*',
+                  '*/FraserRiverDeltaLowerSlope_ADCP_20160101-0007_20160213-2352_145m*',
+                  '*/StraitofGeorgiaCentral_ADCP_20180518-2122_20181001-0137_298m*',
+                  '*/HC11_ADCP_20150723-0215_20160522-1615_122m_noSpikes*',
+                  '*/EF04*',   # technically inside the SS grid but it's not in the model's water domain
+        ]
+    FERRY:
+        pattern: '*_1h_grid_T_[0-9][0-9]*'
+        temperature: 'votemper'
+        salinity: 'vosaline'
+        time_var: time_counter
+

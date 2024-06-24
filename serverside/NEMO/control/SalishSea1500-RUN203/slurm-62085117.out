@@ -1,0 +1,2441 @@
++ [ ! -z '' ]
++ . ./environment.ksh
++ set -ax
++ MACHINE=gpsc4
++ CONTAINER=dfo/dfo_all_default_ubuntu-18.04-amd64_latest
++ PROJECT=rrg-nereusvc
++ TIMELIMIT=09:00:00
++ TIMELIMIT_PP=12:00:00
++ MEMLIMIT=3900M
++ QUEUE=dev
++ JPNI=5
++ JPNJ=19
++ NBPROC=95
++ NBPROC_XIO=1
++ expr 95 + 1
++ TOTPROC=96
++ MAXSUB=86
++ NDATEDEB=19790101
++ PASDETEMPS=120
++ NNBARO=20
++ NNSTOCK=122400
++ SPLIT_FREQ=170
++ MESHRUN=no
++ RESTART=no
++ CONF_NAME=SalishSea1500
++ CONF_NBR=RUN203
++ CONFIG=SalishSea1500-RUN203
++ SEAICE_MODULE=NONE
++ ATMOS_DATA=NONE
++ OBC_ACTIVE=no
++ TIDE_ACTIVE=no
++ TIDE_2Dfile=no
++ RIVER_ACTIVE=no
++ DIR_CALCU_EXE=/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SalishSea1500/BLD/bin
++ DIR_CALCU_SHR=/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SHARED
++ DIR_CALCU_RBL=/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/TOOLS/REBUILD_NEMO
++ DIR_CALCU_XIO=/home/mdunphy/project/mdunphy/Software/XIOS/bin
++ DIR_CALCU_CTL=/home/mdunphy/project/mdunphy/control/SalishSea1500-RUN203
++ DIR_CALCU_UTL=/home/mdunphy/bin
++ DIR_ARCHI_FORC=/home/mdunphy/project/mdunphy/Forcing/grid
++ DIR_ARCHI_ATMOS=/home/mdunphy/project/mdunphy/Forcing/OPPwestSS
++ DIR_ARCHI_INPUT=/home/mdunphy/project/mdunphy/Forcing/grid
++ DIR_ARCHI_CLIM=/unused
++ DIR_ARCHI_OBC=/unused
++ DIR_ARCHI_OBCN=/unused
++ DIR_ARCHI_TIDE=/unused
++ DIR_ARCHI_HOME=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203
++ DIR_ARCHI_CDF=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/CDF
++ DIR_ARCHI_LOG=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/LOG
++ DIR_ARCHI_RST=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203 ]
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST ]
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/CDF ]
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/LOG ]
++ DIR_TMP_HOME=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203
++ DIR_TMP_RST=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RST
++ DIR_TMP_CDF=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/CDF
++ DIR_TMP_LOG=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/LOG
++ DIR_TMP_RUN=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN
++ DIR_TMP_ATM=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/ATMDATA
++ DIR_TMP_OBC=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/BDY
++ DIR_TMP_RVR=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/RIVER
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203 ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RST ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/CDF ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/LOG ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN ]
++ EXEC_NAME=nemo.exe
++ BATMET_FIL=bathy_salishsea_1500m_20210706.nc
++ COORD_FIL=coordinates_salishsea_1500m.nc
++ BATLE_FIL=''
++ BFRI_FIL=''
++ SHLAT_FIL=''
++ TEMP_FIL=''
++ SAL_FIL=''
++ U_FIL=''
++ V_FIL=''
++ SSH_FIL=''
++ RUNOFF_FIL=''
++ RUNOFF_TEMP_FIL=''
++ RUNOFF_MASK_FIL=''
++ CHLA_FIL=''
++ RGB_FIL=''
++ INITICE_FIL=''
++ CICE_GRID=''
++ compo_list=M2
++ TIDE_PREF=''
++ TIDEH_FIL=''
++ TIDEU_FIL=''
++ TIDEV_FIL=''
++ TMX_K1=''
++ TMX_M2=''
++ TMX_MASK=''
++ TMX_MASK=''
++ DUST_FIL=''
++ RIVER_FIL=''
++ obc_list=''
++ obcpref2D=''
++ obcsuf2D=''
++ obcprefNorth=''
++ WEIGHTS_FIL=weights_bilin_OPPwestSS.nc
++ RESTART_FILE=/home/mdunphy/MEOPAR/forcing/restart/hindcast.201812/31dec15/SalishSea_01682640_restart.nc
+
+Configuration name : SalishSea1500-RUN203
+Number of procs : 95
+
+Initialisation from climatology or analytical profiles
+
+
+home : /home/mdunphy
+
+CALCU directories :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SalishSea1500/BLD/bin : directory where is the NEMO executable
+/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SHARED : directory where is the shared files
+/home/mdunphy/project/mdunphy/Software/XIOS/bin : directory where is the XIOS server
+/home/mdunphy/project/mdunphy/control/SalishSea1500-RUN203 : directory where are control files of the run
+/home/mdunphy/bin : directory where to find utilities
+
+MACHINEARCHI directories :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/mdunphy/project/mdunphy/Forcing/OPPwestSS : directory to stock the atmos forcing fields
+/home/mdunphy/project/mdunphy/Forcing/grid : directory for the input files
+/unused : directory for the climatology files
+/unused : directory for the obc files
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203 : directory to stock the results
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST : directory to stock the restarts
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/CDF : directory for combined netCDF results
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/LOG : directory for ice something ...
+
+TEMP directories :
+~~~~~~~~~~~~~~~~~~~~
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203 : home temp directory
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RST : directory for the restart
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/CDF : directory for the cdf
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/LOG : directory for the log
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN : directory to run
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/ATMDATA : directory for the atmos forcing
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/BDY : directory for the obc files
+
+Run features :
+~~~~~~~~~~~~~~
+Executable name : nemo.exe
+Bathymetry : bathy_salishsea_1500m_20210706.nc
+Coordinates : coordinates_salishsea_1500m.nc
+K1 tidal mixing :
+M2 tidal mixing :
+Mask tidal mixing :
+Shlat :
+Clim T :
+Clim S :
+Clim U :
+Clim V :
+Runoff :
+Chlorophyl :
+List of the open boundaries :
+
+Rebuild lddcheck
+gra641
+ldd /home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/TOOLS/REBUILD_NEMO/BLD/bin/rebuild_nemo.exe
+	linux-vdso.so.1 (0x00007ffee2be0000)
+	libstdc++.so.6 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++.so.6 (0x00002b93e9c20000)
+	libz.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libz.so.1 (0x00002b93e9ec4000)
+	libnetcdff.so.7 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/intel2020/openmpi4/netcdf-fortran-mpi/4.5.2/lib/libnetcdff.so.7 (0x00002b93e9ede000)
+	libnetcdf.so.18 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/intel2020/openmpi4/netcdf-mpi/4.7.4/lib64/libnetcdf.so.18 (0x00002b93ea3fc000)
+	libm.so.6 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libm.so.6 (0x00002b93ea5ea000)
+	libiomp5.so => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libiomp5.so (0x00002b93ea72d000)
+	libpthread.so.0 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libpthread.so.0 (0x00002b93eab37000)
+	libmpi_usempif08.so.40 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel2020/openmpi/4.0.3/lib/libmpi_usempif08.so.40 (0x00002b93eab57000)
+	libmpi_usempi_ignore_tkr.so.40 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel2020/openmpi/4.0.3/lib/libmpi_usempi_ignore_tkr.so.40 (0x00002b93eab92000)
+	libmpi_mpifh.so.40 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel2020/openmpi/4.0.3/lib/libmpi_mpifh.so.40 (0x00002b93eaba1000)
+	libmpi.so.40 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel2020/openmpi/4.0.3/lib/libmpi.so.40 (0x00002b93eac0f000)
+	libc.so.6 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libc.so.6 (0x00002b93eaf50000)
+	libgcc_s.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgcc_s.so.1 (0x00002b93eb10a000)
+	libdl.so.2 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libdl.so.2 (0x00002b93eb125000)
+	/cvmfs/soft.computecanada.ca/gentoo/2020/lib64/ld-linux-x86-64.so.2 (0x00002b93e9bbf000)
+	libifport.so.5 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libifport.so.5 (0x00002b93eb12c000)
+	libifcoremt.so.5 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libifcoremt.so.5 (0x00002b93eb35d000)
+	libimf.so => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libimf.so (0x00002b93eb702000)
+	libsvml.so => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libsvml.so (0x00002b93ebe05000)
+	libintlc.so.5 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libintlc.so.5 (0x00002b93ed910000)
+	libhdf5_hl.so.100 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/intel2020/openmpi4/hdf5-mpi/1.10.6/lib/libhdf5_hl.so.100 (0x00002b93edb8b000)
+	libhdf5.so.103 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/intel2020/openmpi4/hdf5-mpi/1.10.6/lib/libhdf5.so.103 (0x00002b93edbb5000)
+	libsz.so.2 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libsz.so.2 (0x00002b93ee0b0000)
+	libcurl.so.4 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libcurl.so.4 (0x00002b93ee0c7000)
+	libirng.so => /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/lib/intel64/libirng.so (0x00002b93ee152000)
+	libopen-rte.so.40 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel2020/openmpi/4.0.3/lib/libopen-rte.so.40 (0x00002b93ee4be000)
+	libopen-pal.so.40 => /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel2020/openmpi/4.0.3/lib/libopen-pal.so.40 (0x00002b93ee5fd000)
+	librt.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/librt.so.1 (0x00002b93ee8a2000)
+	libutil.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libutil.so.1 (0x00002b93ee8ac000)
+	libhwloc.so.5 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libhwloc.so.5 (0x00002b93ee8b1000)
+	libevent-2.1.so.6 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libevent-2.1.so.6 (0x00002b93ee8f5000)
+	libevent_pthreads-2.1.so.6 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libevent_pthreads-2.1.so.6 (0x00002b93ee94a000)
+	libnghttp2.so.14 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libnghttp2.so.14 (0x00002b93ee94f000)
+	libssl.so.1.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libssl.so.1.1 (0x00002b93ee979000)
+	libcrypto.so.1.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libcrypto.so.1.1 (0x00002b93eea0b000)
+	libgssapi_krb5.so.2 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libgssapi_krb5.so.2 (0x00002b93eecc5000)
+	libkrb5.so.3 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libkrb5.so.3 (0x00002b93eed14000)
+	libk5crypto.so.3 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libk5crypto.so.3 (0x00002b93eedf3000)
+	libcom_err.so.2 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libcom_err.so.2 (0x00002b93eee29000)
+	libzstd.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libzstd.so.1 (0x00002b93eee2f000)
+	libnuma.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libnuma.so.1 (0x00002b93eeedf000)
+	libudev.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libudev.so.1 (0x00002b93eeeed000)
+	libpciaccess.so.0 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libpciaccess.so.0 (0x00002b93eef15000)
+	libxml2.so.2 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libxml2.so.2 (0x00002b93eef20000)
+	libkrb5support.so.0 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libkrb5support.so.0 (0x00002b93ef089000)
+	libkeyutils.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libkeyutils.so.1 (0x00002b93ef098000)
+	libresolv.so.2 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libresolv.so.2 (0x00002b93ef09f000)
+	libselinux.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libselinux.so.1 (0x00002b93ef0b7000)
+	libicuuc.so.65 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libicuuc.so.65 (0x00002b93ef0e2000)
+	liblzma.so.5 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/liblzma.so.5 (0x00002b93ef2c4000)
+	libpcre.so.1 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libpcre.so.1 (0x00002b93ef2ec000)
+	libicudata.so.65 => /cvmfs/soft.computecanada.ca/gentoo/2020/usr/lib64/libicudata.so.65 (0x00002b93ef35f000)
+Rebuilding SalishSea1500-RUN203_03916800_restart
+Restart rebuild of SalishSea1500-RUN203_03916800_restart successful
+sending incremental file list
+layout.dat_R032_03794401_03916800
+namelist_cfg_R032_03794401_03916800
+namelist_ref_R032_03794401_03916800
+nemo.stderr_R032_03794401_03916800
+nemo.stdout_R032_03794401_03916800
+ocean.output_R032_03794401_03916800
+output.namelist.dyn_R032_03794401_03916800
+solver.stat_R032_03794401_03916800
+time.step_R032_03794401_03916800
+timing.output_R032_03794401_03916800
+
+sent 16,396,123 bytes  received 210 bytes  10,930,888.67 bytes/sec
+total size is 16,391,266  speedup is 1.00
+sending incremental file list
+SalishSea1500-RUN203_1d_grid_T_19930606-19930606.nc
+SalishSea1500-RUN203_1d_grid_T_19930607-19930607.nc
+SalishSea1500-RUN203_1d_grid_T_19930608-19930608.nc
+SalishSea1500-RUN203_1d_grid_T_19930609-19930609.nc
+SalishSea1500-RUN203_1d_grid_T_19930610-19930610.nc
+SalishSea1500-RUN203_1d_grid_T_19930611-19930611.nc
+SalishSea1500-RUN203_1d_grid_T_19930612-19930612.nc
+SalishSea1500-RUN203_1d_grid_T_19930613-19930613.nc
+SalishSea1500-RUN203_1d_grid_T_19930614-19930614.nc
+SalishSea1500-RUN203_1d_grid_T_19930615-19930615.nc
+SalishSea1500-RUN203_1d_grid_T_19930616-19930616.nc
+SalishSea1500-RUN203_1d_grid_T_19930617-19930617.nc
+SalishSea1500-RUN203_1d_grid_T_19930618-19930618.nc
+SalishSea1500-RUN203_1d_grid_T_19930619-19930619.nc
+SalishSea1500-RUN203_1d_grid_T_19930620-19930620.nc
+SalishSea1500-RUN203_1d_grid_T_19930621-19930621.nc
+SalishSea1500-RUN203_1d_grid_T_19930622-19930622.nc
+SalishSea1500-RUN203_1d_grid_T_19930623-19930623.nc
+SalishSea1500-RUN203_1d_grid_T_19930624-19930624.nc
+SalishSea1500-RUN203_1d_grid_T_19930625-19930625.nc
+SalishSea1500-RUN203_1d_grid_T_19930626-19930626.nc
+SalishSea1500-RUN203_1d_grid_T_19930627-19930627.nc
+SalishSea1500-RUN203_1d_grid_T_19930628-19930628.nc
+SalishSea1500-RUN203_1d_grid_T_19930629-19930629.nc
+SalishSea1500-RUN203_1d_grid_T_19930630-19930630.nc
+SalishSea1500-RUN203_1d_grid_T_19930701-19930701.nc
+SalishSea1500-RUN203_1d_grid_T_19930702-19930702.nc
+SalishSea1500-RUN203_1d_grid_T_19930703-19930703.nc
+SalishSea1500-RUN203_1d_grid_T_19930704-19930704.nc
+SalishSea1500-RUN203_1d_grid_T_19930705-19930705.nc
+SalishSea1500-RUN203_1d_grid_T_19930706-19930706.nc
+SalishSea1500-RUN203_1d_grid_T_19930707-19930707.nc
+SalishSea1500-RUN203_1d_grid_T_19930708-19930708.nc
+SalishSea1500-RUN203_1d_grid_T_19930709-19930709.nc
+SalishSea1500-RUN203_1d_grid_T_19930710-19930710.nc
+SalishSea1500-RUN203_1d_grid_T_19930711-19930711.nc
+SalishSea1500-RUN203_1d_grid_T_19930712-19930712.nc
+SalishSea1500-RUN203_1d_grid_T_19930713-19930713.nc
+SalishSea1500-RUN203_1d_grid_T_19930714-19930714.nc
+SalishSea1500-RUN203_1d_grid_T_19930715-19930715.nc
+SalishSea1500-RUN203_1d_grid_T_19930716-19930716.nc
+SalishSea1500-RUN203_1d_grid_T_19930717-19930717.nc
+SalishSea1500-RUN203_1d_grid_T_19930718-19930718.nc
+SalishSea1500-RUN203_1d_grid_T_19930719-19930719.nc
+SalishSea1500-RUN203_1d_grid_T_19930720-19930720.nc
+SalishSea1500-RUN203_1d_grid_T_19930721-19930721.nc
+SalishSea1500-RUN203_1d_grid_T_19930722-19930722.nc
+SalishSea1500-RUN203_1d_grid_T_19930723-19930723.nc
+SalishSea1500-RUN203_1d_grid_T_19930724-19930724.nc
+SalishSea1500-RUN203_1d_grid_T_19930725-19930725.nc
+SalishSea1500-RUN203_1d_grid_T_19930726-19930726.nc
+SalishSea1500-RUN203_1d_grid_T_19930727-19930727.nc
+SalishSea1500-RUN203_1d_grid_T_19930728-19930728.nc
+SalishSea1500-RUN203_1d_grid_T_19930729-19930729.nc
+SalishSea1500-RUN203_1d_grid_T_19930730-19930730.nc
+SalishSea1500-RUN203_1d_grid_T_19930731-19930731.nc
+SalishSea1500-RUN203_1d_grid_T_19930801-19930801.nc
+SalishSea1500-RUN203_1d_grid_T_19930802-19930802.nc
+SalishSea1500-RUN203_1d_grid_T_19930803-19930803.nc
+SalishSea1500-RUN203_1d_grid_T_19930804-19930804.nc
+SalishSea1500-RUN203_1d_grid_T_19930805-19930805.nc
+SalishSea1500-RUN203_1d_grid_T_19930806-19930806.nc
+SalishSea1500-RUN203_1d_grid_T_19930807-19930807.nc
+SalishSea1500-RUN203_1d_grid_T_19930808-19930808.nc
+SalishSea1500-RUN203_1d_grid_T_19930809-19930809.nc
+SalishSea1500-RUN203_1d_grid_T_19930810-19930810.nc
+SalishSea1500-RUN203_1d_grid_T_19930811-19930811.nc
+SalishSea1500-RUN203_1d_grid_T_19930812-19930812.nc
+SalishSea1500-RUN203_1d_grid_T_19930813-19930813.nc
+SalishSea1500-RUN203_1d_grid_T_19930814-19930814.nc
+SalishSea1500-RUN203_1d_grid_T_19930815-19930815.nc
+SalishSea1500-RUN203_1d_grid_T_19930816-19930816.nc
+SalishSea1500-RUN203_1d_grid_T_19930817-19930817.nc
+SalishSea1500-RUN203_1d_grid_T_19930818-19930818.nc
+SalishSea1500-RUN203_1d_grid_T_19930819-19930819.nc
+SalishSea1500-RUN203_1d_grid_T_19930820-19930820.nc
+SalishSea1500-RUN203_1d_grid_T_19930821-19930821.nc
+SalishSea1500-RUN203_1d_grid_T_19930822-19930822.nc
+SalishSea1500-RUN203_1d_grid_T_19930823-19930823.nc
+SalishSea1500-RUN203_1d_grid_T_19930824-19930824.nc
+SalishSea1500-RUN203_1d_grid_T_19930825-19930825.nc
+SalishSea1500-RUN203_1d_grid_T_19930826-19930826.nc
+SalishSea1500-RUN203_1d_grid_T_19930827-19930827.nc
+SalishSea1500-RUN203_1d_grid_T_19930828-19930828.nc
+SalishSea1500-RUN203_1d_grid_T_19930829-19930829.nc
+SalishSea1500-RUN203_1d_grid_T_19930830-19930830.nc
+SalishSea1500-RUN203_1d_grid_T_19930831-19930831.nc
+SalishSea1500-RUN203_1d_grid_T_19930901-19930901.nc
+SalishSea1500-RUN203_1d_grid_T_19930902-19930902.nc
+SalishSea1500-RUN203_1d_grid_T_19930903-19930903.nc
+SalishSea1500-RUN203_1d_grid_T_19930904-19930904.nc
+SalishSea1500-RUN203_1d_grid_T_19930905-19930905.nc
+SalishSea1500-RUN203_1d_grid_T_19930906-19930906.nc
+SalishSea1500-RUN203_1d_grid_T_19930907-19930907.nc
+SalishSea1500-RUN203_1d_grid_T_19930908-19930908.nc
+SalishSea1500-RUN203_1d_grid_T_19930909-19930909.nc
+SalishSea1500-RUN203_1d_grid_T_19930910-19930910.nc
+SalishSea1500-RUN203_1d_grid_T_19930911-19930911.nc
+SalishSea1500-RUN203_1d_grid_T_19930912-19930912.nc
+SalishSea1500-RUN203_1d_grid_T_19930913-19930913.nc
+SalishSea1500-RUN203_1d_grid_T_19930914-19930914.nc
+SalishSea1500-RUN203_1d_grid_T_19930915-19930915.nc
+SalishSea1500-RUN203_1d_grid_T_19930916-19930916.nc
+SalishSea1500-RUN203_1d_grid_T_19930917-19930917.nc
+SalishSea1500-RUN203_1d_grid_T_19930918-19930918.nc
+SalishSea1500-RUN203_1d_grid_T_19930919-19930919.nc
+SalishSea1500-RUN203_1d_grid_T_19930920-19930920.nc
+SalishSea1500-RUN203_1d_grid_T_19930921-19930921.nc
+SalishSea1500-RUN203_1d_grid_T_19930922-19930922.nc
+SalishSea1500-RUN203_1d_grid_T_19930923-19930923.nc
+SalishSea1500-RUN203_1d_grid_T_19930924-19930924.nc
+SalishSea1500-RUN203_1d_grid_T_19930925-19930925.nc
+SalishSea1500-RUN203_1d_grid_T_19930926-19930926.nc
+SalishSea1500-RUN203_1d_grid_T_19930927-19930927.nc
+SalishSea1500-RUN203_1d_grid_T_19930928-19930928.nc
+SalishSea1500-RUN203_1d_grid_T_19930929-19930929.nc
+SalishSea1500-RUN203_1d_grid_T_19930930-19930930.nc
+SalishSea1500-RUN203_1d_grid_T_19931001-19931001.nc
+SalishSea1500-RUN203_1d_grid_T_19931002-19931002.nc
+SalishSea1500-RUN203_1d_grid_T_19931003-19931003.nc
+SalishSea1500-RUN203_1d_grid_T_19931004-19931004.nc
+SalishSea1500-RUN203_1d_grid_T_19931005-19931005.nc
+SalishSea1500-RUN203_1d_grid_T_19931006-19931006.nc
+SalishSea1500-RUN203_1d_grid_T_19931007-19931007.nc
+SalishSea1500-RUN203_1d_grid_T_19931008-19931008.nc
+SalishSea1500-RUN203_1d_grid_T_19931009-19931009.nc
+SalishSea1500-RUN203_1d_grid_T_19931010-19931010.nc
+SalishSea1500-RUN203_1d_grid_T_19931011-19931011.nc
+SalishSea1500-RUN203_1d_grid_T_19931012-19931012.nc
+SalishSea1500-RUN203_1d_grid_T_19931013-19931013.nc
+SalishSea1500-RUN203_1d_grid_T_19931014-19931014.nc
+SalishSea1500-RUN203_1d_grid_T_19931015-19931015.nc
+SalishSea1500-RUN203_1d_grid_T_19931016-19931016.nc
+SalishSea1500-RUN203_1d_grid_T_19931017-19931017.nc
+SalishSea1500-RUN203_1d_grid_T_19931018-19931018.nc
+SalishSea1500-RUN203_1d_grid_T_19931019-19931019.nc
+SalishSea1500-RUN203_1d_grid_T_19931020-19931020.nc
+SalishSea1500-RUN203_1d_grid_T_19931021-19931021.nc
+SalishSea1500-RUN203_1d_grid_T_19931022-19931022.nc
+SalishSea1500-RUN203_1d_grid_T_19931023-19931023.nc
+SalishSea1500-RUN203_1d_grid_T_19931024-19931024.nc
+SalishSea1500-RUN203_1d_grid_T_19931025-19931025.nc
+SalishSea1500-RUN203_1d_grid_T_19931026-19931026.nc
+SalishSea1500-RUN203_1d_grid_T_19931027-19931027.nc
+SalishSea1500-RUN203_1d_grid_T_19931028-19931028.nc
+SalishSea1500-RUN203_1d_grid_T_19931029-19931029.nc
+SalishSea1500-RUN203_1d_grid_T_19931030-19931030.nc
+SalishSea1500-RUN203_1d_grid_T_19931031-19931031.nc
+SalishSea1500-RUN203_1d_grid_T_19931101-19931101.nc
+SalishSea1500-RUN203_1d_grid_T_19931102-19931102.nc
+SalishSea1500-RUN203_1d_grid_T_19931103-19931103.nc
+SalishSea1500-RUN203_1d_grid_T_19931104-19931104.nc
+SalishSea1500-RUN203_1d_grid_T_19931105-19931105.nc
+SalishSea1500-RUN203_1d_grid_T_19931106-19931106.nc
+SalishSea1500-RUN203_1d_grid_T_19931107-19931107.nc
+SalishSea1500-RUN203_1d_grid_T_19931108-19931108.nc
+SalishSea1500-RUN203_1d_grid_T_19931109-19931109.nc
+SalishSea1500-RUN203_1d_grid_T_19931110-19931110.nc
+SalishSea1500-RUN203_1d_grid_T_19931111-19931111.nc
+SalishSea1500-RUN203_1d_grid_T_19931112-19931112.nc
+SalishSea1500-RUN203_1d_grid_T_19931113-19931113.nc
+SalishSea1500-RUN203_1d_grid_T_19931114-19931114.nc
+SalishSea1500-RUN203_1d_grid_T_19931115-19931115.nc
+SalishSea1500-RUN203_1d_grid_T_19931116-19931116.nc
+SalishSea1500-RUN203_1d_grid_T_19931117-19931117.nc
+SalishSea1500-RUN203_1d_grid_T_19931118-19931118.nc
+SalishSea1500-RUN203_1d_grid_T_19931119-19931119.nc
+SalishSea1500-RUN203_1d_grid_T_19931120-19931120.nc
+SalishSea1500-RUN203_1d_grid_T_19931121-19931121.nc
+SalishSea1500-RUN203_1d_grid_T_19931122-19931122.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930606-19930606.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930607-19930607.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930608-19930608.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930609-19930609.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930610-19930610.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930611-19930611.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930612-19930612.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930613-19930613.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930614-19930614.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930615-19930615.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930616-19930616.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930617-19930617.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930618-19930618.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930619-19930619.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930620-19930620.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930621-19930621.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930622-19930622.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930623-19930623.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930624-19930624.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930625-19930625.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930626-19930626.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930627-19930627.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930628-19930628.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930629-19930629.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930630-19930630.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930701-19930701.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930702-19930702.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930703-19930703.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930704-19930704.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930705-19930705.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930706-19930706.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930707-19930707.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930708-19930708.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930709-19930709.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930710-19930710.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930711-19930711.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930712-19930712.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930713-19930713.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930714-19930714.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930715-19930715.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930716-19930716.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930717-19930717.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930718-19930718.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930719-19930719.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930720-19930720.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930721-19930721.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930722-19930722.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930723-19930723.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930724-19930724.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930725-19930725.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930726-19930726.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930727-19930727.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930728-19930728.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930729-19930729.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930730-19930730.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930731-19930731.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930801-19930801.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930802-19930802.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930803-19930803.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930804-19930804.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930805-19930805.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930806-19930806.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930807-19930807.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930808-19930808.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930809-19930809.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930810-19930810.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930811-19930811.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930812-19930812.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930813-19930813.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930814-19930814.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930815-19930815.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930816-19930816.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930817-19930817.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930818-19930818.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930819-19930819.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930820-19930820.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930821-19930821.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930822-19930822.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930823-19930823.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930824-19930824.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930825-19930825.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930826-19930826.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930827-19930827.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930828-19930828.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930829-19930829.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930830-19930830.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930831-19930831.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930901-19930901.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930902-19930902.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930903-19930903.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930904-19930904.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930905-19930905.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930906-19930906.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930907-19930907.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930908-19930908.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930909-19930909.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930910-19930910.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930911-19930911.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930912-19930912.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930913-19930913.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930914-19930914.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930915-19930915.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930916-19930916.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930917-19930917.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930918-19930918.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930919-19930919.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930920-19930920.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930921-19930921.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930922-19930922.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930923-19930923.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930924-19930924.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930925-19930925.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930926-19930926.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930927-19930927.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930928-19930928.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930929-19930929.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19930930-19930930.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931001-19931001.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931002-19931002.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931003-19931003.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931004-19931004.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931005-19931005.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931006-19931006.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931007-19931007.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931008-19931008.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931009-19931009.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931010-19931010.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931011-19931011.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931012-19931012.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931013-19931013.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931014-19931014.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931015-19931015.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931016-19931016.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931017-19931017.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931018-19931018.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931019-19931019.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931020-19931020.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931021-19931021.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931022-19931022.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931023-19931023.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931024-19931024.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931025-19931025.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931026-19931026.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931027-19931027.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931028-19931028.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931029-19931029.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931030-19931030.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931031-19931031.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931101-19931101.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931102-19931102.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931103-19931103.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931104-19931104.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931105-19931105.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931106-19931106.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931107-19931107.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931108-19931108.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931109-19931109.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931110-19931110.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931111-19931111.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931112-19931112.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931113-19931113.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931114-19931114.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931115-19931115.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931116-19931116.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931117-19931117.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931118-19931118.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931119-19931119.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931120-19931120.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931121-19931121.nc
+SalishSea1500-RUN203_1d_grid_T_2D_19931122-19931122.nc
+SalishSea1500-RUN203_1d_grid_U_19930606-19930606.nc
+SalishSea1500-RUN203_1d_grid_U_19930607-19930607.nc
+SalishSea1500-RUN203_1d_grid_U_19930608-19930608.nc
+SalishSea1500-RUN203_1d_grid_U_19930609-19930609.nc
+SalishSea1500-RUN203_1d_grid_U_19930610-19930610.nc
+SalishSea1500-RUN203_1d_grid_U_19930611-19930611.nc
+SalishSea1500-RUN203_1d_grid_U_19930612-19930612.nc
+SalishSea1500-RUN203_1d_grid_U_19930613-19930613.nc
+SalishSea1500-RUN203_1d_grid_U_19930614-19930614.nc
+SalishSea1500-RUN203_1d_grid_U_19930615-19930615.nc
+SalishSea1500-RUN203_1d_grid_U_19930616-19930616.nc
+SalishSea1500-RUN203_1d_grid_U_19930617-19930617.nc
+SalishSea1500-RUN203_1d_grid_U_19930618-19930618.nc
+SalishSea1500-RUN203_1d_grid_U_19930619-19930619.nc
+SalishSea1500-RUN203_1d_grid_U_19930620-19930620.nc
+SalishSea1500-RUN203_1d_grid_U_19930621-19930621.nc
+SalishSea1500-RUN203_1d_grid_U_19930622-19930622.nc
+SalishSea1500-RUN203_1d_grid_U_19930623-19930623.nc
+SalishSea1500-RUN203_1d_grid_U_19930624-19930624.nc
+SalishSea1500-RUN203_1d_grid_U_19930625-19930625.nc
+SalishSea1500-RUN203_1d_grid_U_19930626-19930626.nc
+SalishSea1500-RUN203_1d_grid_U_19930627-19930627.nc
+SalishSea1500-RUN203_1d_grid_U_19930628-19930628.nc
+SalishSea1500-RUN203_1d_grid_U_19930629-19930629.nc
+SalishSea1500-RUN203_1d_grid_U_19930630-19930630.nc
+SalishSea1500-RUN203_1d_grid_U_19930701-19930701.nc
+SalishSea1500-RUN203_1d_grid_U_19930702-19930702.nc
+SalishSea1500-RUN203_1d_grid_U_19930703-19930703.nc
+SalishSea1500-RUN203_1d_grid_U_19930704-19930704.nc
+SalishSea1500-RUN203_1d_grid_U_19930705-19930705.nc
+SalishSea1500-RUN203_1d_grid_U_19930706-19930706.nc
+SalishSea1500-RUN203_1d_grid_U_19930707-19930707.nc
+SalishSea1500-RUN203_1d_grid_U_19930708-19930708.nc
+SalishSea1500-RUN203_1d_grid_U_19930709-19930709.nc
+SalishSea1500-RUN203_1d_grid_U_19930710-19930710.nc
+SalishSea1500-RUN203_1d_grid_U_19930711-19930711.nc
+SalishSea1500-RUN203_1d_grid_U_19930712-19930712.nc
+SalishSea1500-RUN203_1d_grid_U_19930713-19930713.nc
+SalishSea1500-RUN203_1d_grid_U_19930714-19930714.nc
+SalishSea1500-RUN203_1d_grid_U_19930715-19930715.nc
+SalishSea1500-RUN203_1d_grid_U_19930716-19930716.nc
+SalishSea1500-RUN203_1d_grid_U_19930717-19930717.nc
+SalishSea1500-RUN203_1d_grid_U_19930718-19930718.nc
+SalishSea1500-RUN203_1d_grid_U_19930719-19930719.nc
+SalishSea1500-RUN203_1d_grid_U_19930720-19930720.nc
+SalishSea1500-RUN203_1d_grid_U_19930721-19930721.nc
+SalishSea1500-RUN203_1d_grid_U_19930722-19930722.nc
+SalishSea1500-RUN203_1d_grid_U_19930723-19930723.nc
+SalishSea1500-RUN203_1d_grid_U_19930724-19930724.nc
+SalishSea1500-RUN203_1d_grid_U_19930725-19930725.nc
+SalishSea1500-RUN203_1d_grid_U_19930726-19930726.nc
+SalishSea1500-RUN203_1d_grid_U_19930727-19930727.nc
+SalishSea1500-RUN203_1d_grid_U_19930728-19930728.nc
+SalishSea1500-RUN203_1d_grid_U_19930729-19930729.nc
+SalishSea1500-RUN203_1d_grid_U_19930730-19930730.nc
+SalishSea1500-RUN203_1d_grid_U_19930731-19930731.nc
+SalishSea1500-RUN203_1d_grid_U_19930801-19930801.nc
+SalishSea1500-RUN203_1d_grid_U_19930802-19930802.nc
+SalishSea1500-RUN203_1d_grid_U_19930803-19930803.nc
+SalishSea1500-RUN203_1d_grid_U_19930804-19930804.nc
+SalishSea1500-RUN203_1d_grid_U_19930805-19930805.nc
+SalishSea1500-RUN203_1d_grid_U_19930806-19930806.nc
+SalishSea1500-RUN203_1d_grid_U_19930807-19930807.nc
+SalishSea1500-RUN203_1d_grid_U_19930808-19930808.nc
+SalishSea1500-RUN203_1d_grid_U_19930809-19930809.nc
+SalishSea1500-RUN203_1d_grid_U_19930810-19930810.nc
+SalishSea1500-RUN203_1d_grid_U_19930811-19930811.nc
+SalishSea1500-RUN203_1d_grid_U_19930812-19930812.nc
+SalishSea1500-RUN203_1d_grid_U_19930813-19930813.nc
+SalishSea1500-RUN203_1d_grid_U_19930814-19930814.nc
+SalishSea1500-RUN203_1d_grid_U_19930815-19930815.nc
+SalishSea1500-RUN203_1d_grid_U_19930816-19930816.nc
+SalishSea1500-RUN203_1d_grid_U_19930817-19930817.nc
+SalishSea1500-RUN203_1d_grid_U_19930818-19930818.nc
+SalishSea1500-RUN203_1d_grid_U_19930819-19930819.nc
+SalishSea1500-RUN203_1d_grid_U_19930820-19930820.nc
+SalishSea1500-RUN203_1d_grid_U_19930821-19930821.nc
+SalishSea1500-RUN203_1d_grid_U_19930822-19930822.nc
+SalishSea1500-RUN203_1d_grid_U_19930823-19930823.nc
+SalishSea1500-RUN203_1d_grid_U_19930824-19930824.nc
+SalishSea1500-RUN203_1d_grid_U_19930825-19930825.nc
+SalishSea1500-RUN203_1d_grid_U_19930826-19930826.nc
+SalishSea1500-RUN203_1d_grid_U_19930827-19930827.nc
+SalishSea1500-RUN203_1d_grid_U_19930828-19930828.nc
+SalishSea1500-RUN203_1d_grid_U_19930829-19930829.nc
+SalishSea1500-RUN203_1d_grid_U_19930830-19930830.nc
+SalishSea1500-RUN203_1d_grid_U_19930831-19930831.nc
+SalishSea1500-RUN203_1d_grid_U_19930901-19930901.nc
+SalishSea1500-RUN203_1d_grid_U_19930902-19930902.nc
+SalishSea1500-RUN203_1d_grid_U_19930903-19930903.nc
+SalishSea1500-RUN203_1d_grid_U_19930904-19930904.nc
+SalishSea1500-RUN203_1d_grid_U_19930905-19930905.nc
+SalishSea1500-RUN203_1d_grid_U_19930906-19930906.nc
+SalishSea1500-RUN203_1d_grid_U_19930907-19930907.nc
+SalishSea1500-RUN203_1d_grid_U_19930908-19930908.nc
+SalishSea1500-RUN203_1d_grid_U_19930909-19930909.nc
+SalishSea1500-RUN203_1d_grid_U_19930910-19930910.nc
+SalishSea1500-RUN203_1d_grid_U_19930911-19930911.nc
+SalishSea1500-RUN203_1d_grid_U_19930912-19930912.nc
+SalishSea1500-RUN203_1d_grid_U_19930913-19930913.nc
+SalishSea1500-RUN203_1d_grid_U_19930914-19930914.nc
+SalishSea1500-RUN203_1d_grid_U_19930915-19930915.nc
+SalishSea1500-RUN203_1d_grid_U_19930916-19930916.nc
+SalishSea1500-RUN203_1d_grid_U_19930917-19930917.nc
+SalishSea1500-RUN203_1d_grid_U_19930918-19930918.nc
+SalishSea1500-RUN203_1d_grid_U_19930919-19930919.nc
+SalishSea1500-RUN203_1d_grid_U_19930920-19930920.nc
+SalishSea1500-RUN203_1d_grid_U_19930921-19930921.nc
+SalishSea1500-RUN203_1d_grid_U_19930922-19930922.nc
+SalishSea1500-RUN203_1d_grid_U_19930923-19930923.nc
+SalishSea1500-RUN203_1d_grid_U_19930924-19930924.nc
+SalishSea1500-RUN203_1d_grid_U_19930925-19930925.nc
+SalishSea1500-RUN203_1d_grid_U_19930926-19930926.nc
+SalishSea1500-RUN203_1d_grid_U_19930927-19930927.nc
+SalishSea1500-RUN203_1d_grid_U_19930928-19930928.nc
+SalishSea1500-RUN203_1d_grid_U_19930929-19930929.nc
+SalishSea1500-RUN203_1d_grid_U_19930930-19930930.nc
+SalishSea1500-RUN203_1d_grid_U_19931001-19931001.nc
+SalishSea1500-RUN203_1d_grid_U_19931002-19931002.nc
+SalishSea1500-RUN203_1d_grid_U_19931003-19931003.nc
+SalishSea1500-RUN203_1d_grid_U_19931004-19931004.nc
+SalishSea1500-RUN203_1d_grid_U_19931005-19931005.nc
+SalishSea1500-RUN203_1d_grid_U_19931006-19931006.nc
+SalishSea1500-RUN203_1d_grid_U_19931007-19931007.nc
+SalishSea1500-RUN203_1d_grid_U_19931008-19931008.nc
+SalishSea1500-RUN203_1d_grid_U_19931009-19931009.nc
+SalishSea1500-RUN203_1d_grid_U_19931010-19931010.nc
+SalishSea1500-RUN203_1d_grid_U_19931011-19931011.nc
+SalishSea1500-RUN203_1d_grid_U_19931012-19931012.nc
+SalishSea1500-RUN203_1d_grid_U_19931013-19931013.nc
+SalishSea1500-RUN203_1d_grid_U_19931014-19931014.nc
+SalishSea1500-RUN203_1d_grid_U_19931015-19931015.nc
+SalishSea1500-RUN203_1d_grid_U_19931016-19931016.nc
+SalishSea1500-RUN203_1d_grid_U_19931017-19931017.nc
+SalishSea1500-RUN203_1d_grid_U_19931018-19931018.nc
+SalishSea1500-RUN203_1d_grid_U_19931019-19931019.nc
+SalishSea1500-RUN203_1d_grid_U_19931020-19931020.nc
+SalishSea1500-RUN203_1d_grid_U_19931021-19931021.nc
+SalishSea1500-RUN203_1d_grid_U_19931022-19931022.nc
+SalishSea1500-RUN203_1d_grid_U_19931023-19931023.nc
+SalishSea1500-RUN203_1d_grid_U_19931024-19931024.nc
+SalishSea1500-RUN203_1d_grid_U_19931025-19931025.nc
+SalishSea1500-RUN203_1d_grid_U_19931026-19931026.nc
+SalishSea1500-RUN203_1d_grid_U_19931027-19931027.nc
+SalishSea1500-RUN203_1d_grid_U_19931028-19931028.nc
+SalishSea1500-RUN203_1d_grid_U_19931029-19931029.nc
+SalishSea1500-RUN203_1d_grid_U_19931030-19931030.nc
+SalishSea1500-RUN203_1d_grid_U_19931031-19931031.nc
+SalishSea1500-RUN203_1d_grid_U_19931101-19931101.nc
+SalishSea1500-RUN203_1d_grid_U_19931102-19931102.nc
+SalishSea1500-RUN203_1d_grid_U_19931103-19931103.nc
+SalishSea1500-RUN203_1d_grid_U_19931104-19931104.nc
+SalishSea1500-RUN203_1d_grid_U_19931105-19931105.nc
+SalishSea1500-RUN203_1d_grid_U_19931106-19931106.nc
+SalishSea1500-RUN203_1d_grid_U_19931107-19931107.nc
+SalishSea1500-RUN203_1d_grid_U_19931108-19931108.nc
+SalishSea1500-RUN203_1d_grid_U_19931109-19931109.nc
+SalishSea1500-RUN203_1d_grid_U_19931110-19931110.nc
+SalishSea1500-RUN203_1d_grid_U_19931111-19931111.nc
+SalishSea1500-RUN203_1d_grid_U_19931112-19931112.nc
+SalishSea1500-RUN203_1d_grid_U_19931113-19931113.nc
+SalishSea1500-RUN203_1d_grid_U_19931114-19931114.nc
+SalishSea1500-RUN203_1d_grid_U_19931115-19931115.nc
+SalishSea1500-RUN203_1d_grid_U_19931116-19931116.nc
+SalishSea1500-RUN203_1d_grid_U_19931117-19931117.nc
+SalishSea1500-RUN203_1d_grid_U_19931118-19931118.nc
+SalishSea1500-RUN203_1d_grid_U_19931119-19931119.nc
+SalishSea1500-RUN203_1d_grid_U_19931120-19931120.nc
+SalishSea1500-RUN203_1d_grid_U_19931121-19931121.nc
+SalishSea1500-RUN203_1d_grid_U_19931122-19931122.nc
+SalishSea1500-RUN203_1d_grid_V_19930606-19930606.nc
+SalishSea1500-RUN203_1d_grid_V_19930607-19930607.nc
+SalishSea1500-RUN203_1d_grid_V_19930608-19930608.nc
+SalishSea1500-RUN203_1d_grid_V_19930609-19930609.nc
+SalishSea1500-RUN203_1d_grid_V_19930610-19930610.nc
+SalishSea1500-RUN203_1d_grid_V_19930611-19930611.nc
+SalishSea1500-RUN203_1d_grid_V_19930612-19930612.nc
+SalishSea1500-RUN203_1d_grid_V_19930613-19930613.nc
+SalishSea1500-RUN203_1d_grid_V_19930614-19930614.nc
+SalishSea1500-RUN203_1d_grid_V_19930615-19930615.nc
+SalishSea1500-RUN203_1d_grid_V_19930616-19930616.nc
+SalishSea1500-RUN203_1d_grid_V_19930617-19930617.nc
+SalishSea1500-RUN203_1d_grid_V_19930618-19930618.nc
+SalishSea1500-RUN203_1d_grid_V_19930619-19930619.nc
+SalishSea1500-RUN203_1d_grid_V_19930620-19930620.nc
+SalishSea1500-RUN203_1d_grid_V_19930621-19930621.nc
+SalishSea1500-RUN203_1d_grid_V_19930622-19930622.nc
+SalishSea1500-RUN203_1d_grid_V_19930623-19930623.nc
+SalishSea1500-RUN203_1d_grid_V_19930624-19930624.nc
+SalishSea1500-RUN203_1d_grid_V_19930625-19930625.nc
+SalishSea1500-RUN203_1d_grid_V_19930626-19930626.nc
+SalishSea1500-RUN203_1d_grid_V_19930627-19930627.nc
+SalishSea1500-RUN203_1d_grid_V_19930628-19930628.nc
+SalishSea1500-RUN203_1d_grid_V_19930629-19930629.nc
+SalishSea1500-RUN203_1d_grid_V_19930630-19930630.nc
+SalishSea1500-RUN203_1d_grid_V_19930701-19930701.nc
+SalishSea1500-RUN203_1d_grid_V_19930702-19930702.nc
+SalishSea1500-RUN203_1d_grid_V_19930703-19930703.nc
+SalishSea1500-RUN203_1d_grid_V_19930704-19930704.nc
+SalishSea1500-RUN203_1d_grid_V_19930705-19930705.nc
+SalishSea1500-RUN203_1d_grid_V_19930706-19930706.nc
+SalishSea1500-RUN203_1d_grid_V_19930707-19930707.nc
+SalishSea1500-RUN203_1d_grid_V_19930708-19930708.nc
+SalishSea1500-RUN203_1d_grid_V_19930709-19930709.nc
+SalishSea1500-RUN203_1d_grid_V_19930710-19930710.nc
+SalishSea1500-RUN203_1d_grid_V_19930711-19930711.nc
+SalishSea1500-RUN203_1d_grid_V_19930712-19930712.nc
+SalishSea1500-RUN203_1d_grid_V_19930713-19930713.nc
+SalishSea1500-RUN203_1d_grid_V_19930714-19930714.nc
+SalishSea1500-RUN203_1d_grid_V_19930715-19930715.nc
+SalishSea1500-RUN203_1d_grid_V_19930716-19930716.nc
+SalishSea1500-RUN203_1d_grid_V_19930717-19930717.nc
+SalishSea1500-RUN203_1d_grid_V_19930718-19930718.nc
+SalishSea1500-RUN203_1d_grid_V_19930719-19930719.nc
+SalishSea1500-RUN203_1d_grid_V_19930720-19930720.nc
+SalishSea1500-RUN203_1d_grid_V_19930721-19930721.nc
+SalishSea1500-RUN203_1d_grid_V_19930722-19930722.nc
+SalishSea1500-RUN203_1d_grid_V_19930723-19930723.nc
+SalishSea1500-RUN203_1d_grid_V_19930724-19930724.nc
+SalishSea1500-RUN203_1d_grid_V_19930725-19930725.nc
+SalishSea1500-RUN203_1d_grid_V_19930726-19930726.nc
+SalishSea1500-RUN203_1d_grid_V_19930727-19930727.nc
+SalishSea1500-RUN203_1d_grid_V_19930728-19930728.nc
+SalishSea1500-RUN203_1d_grid_V_19930729-19930729.nc
+SalishSea1500-RUN203_1d_grid_V_19930730-19930730.nc
+SalishSea1500-RUN203_1d_grid_V_19930731-19930731.nc
+SalishSea1500-RUN203_1d_grid_V_19930801-19930801.nc
+SalishSea1500-RUN203_1d_grid_V_19930802-19930802.nc
+SalishSea1500-RUN203_1d_grid_V_19930803-19930803.nc
+SalishSea1500-RUN203_1d_grid_V_19930804-19930804.nc
+SalishSea1500-RUN203_1d_grid_V_19930805-19930805.nc
+SalishSea1500-RUN203_1d_grid_V_19930806-19930806.nc
+SalishSea1500-RUN203_1d_grid_V_19930807-19930807.nc
+SalishSea1500-RUN203_1d_grid_V_19930808-19930808.nc
+SalishSea1500-RUN203_1d_grid_V_19930809-19930809.nc
+SalishSea1500-RUN203_1d_grid_V_19930810-19930810.nc
+SalishSea1500-RUN203_1d_grid_V_19930811-19930811.nc
+SalishSea1500-RUN203_1d_grid_V_19930812-19930812.nc
+SalishSea1500-RUN203_1d_grid_V_19930813-19930813.nc
+SalishSea1500-RUN203_1d_grid_V_19930814-19930814.nc
+SalishSea1500-RUN203_1d_grid_V_19930815-19930815.nc
+SalishSea1500-RUN203_1d_grid_V_19930816-19930816.nc
+SalishSea1500-RUN203_1d_grid_V_19930817-19930817.nc
+SalishSea1500-RUN203_1d_grid_V_19930818-19930818.nc
+SalishSea1500-RUN203_1d_grid_V_19930819-19930819.nc
+SalishSea1500-RUN203_1d_grid_V_19930820-19930820.nc
+SalishSea1500-RUN203_1d_grid_V_19930821-19930821.nc
+SalishSea1500-RUN203_1d_grid_V_19930822-19930822.nc
+SalishSea1500-RUN203_1d_grid_V_19930823-19930823.nc
+SalishSea1500-RUN203_1d_grid_V_19930824-19930824.nc
+SalishSea1500-RUN203_1d_grid_V_19930825-19930825.nc
+SalishSea1500-RUN203_1d_grid_V_19930826-19930826.nc
+SalishSea1500-RUN203_1d_grid_V_19930827-19930827.nc
+SalishSea1500-RUN203_1d_grid_V_19930828-19930828.nc
+SalishSea1500-RUN203_1d_grid_V_19930829-19930829.nc
+SalishSea1500-RUN203_1d_grid_V_19930830-19930830.nc
+SalishSea1500-RUN203_1d_grid_V_19930831-19930831.nc
+SalishSea1500-RUN203_1d_grid_V_19930901-19930901.nc
+SalishSea1500-RUN203_1d_grid_V_19930902-19930902.nc
+SalishSea1500-RUN203_1d_grid_V_19930903-19930903.nc
+SalishSea1500-RUN203_1d_grid_V_19930904-19930904.nc
+SalishSea1500-RUN203_1d_grid_V_19930905-19930905.nc
+SalishSea1500-RUN203_1d_grid_V_19930906-19930906.nc
+SalishSea1500-RUN203_1d_grid_V_19930907-19930907.nc
+SalishSea1500-RUN203_1d_grid_V_19930908-19930908.nc
+SalishSea1500-RUN203_1d_grid_V_19930909-19930909.nc
+SalishSea1500-RUN203_1d_grid_V_19930910-19930910.nc
+SalishSea1500-RUN203_1d_grid_V_19930911-19930911.nc
+SalishSea1500-RUN203_1d_grid_V_19930912-19930912.nc
+SalishSea1500-RUN203_1d_grid_V_19930913-19930913.nc
+SalishSea1500-RUN203_1d_grid_V_19930914-19930914.nc
+SalishSea1500-RUN203_1d_grid_V_19930915-19930915.nc
+SalishSea1500-RUN203_1d_grid_V_19930916-19930916.nc
+SalishSea1500-RUN203_1d_grid_V_19930917-19930917.nc
+SalishSea1500-RUN203_1d_grid_V_19930918-19930918.nc
+SalishSea1500-RUN203_1d_grid_V_19930919-19930919.nc
+SalishSea1500-RUN203_1d_grid_V_19930920-19930920.nc
+SalishSea1500-RUN203_1d_grid_V_19930921-19930921.nc
+SalishSea1500-RUN203_1d_grid_V_19930922-19930922.nc
+SalishSea1500-RUN203_1d_grid_V_19930923-19930923.nc
+SalishSea1500-RUN203_1d_grid_V_19930924-19930924.nc
+SalishSea1500-RUN203_1d_grid_V_19930925-19930925.nc
+SalishSea1500-RUN203_1d_grid_V_19930926-19930926.nc
+SalishSea1500-RUN203_1d_grid_V_19930927-19930927.nc
+SalishSea1500-RUN203_1d_grid_V_19930928-19930928.nc
+SalishSea1500-RUN203_1d_grid_V_19930929-19930929.nc
+SalishSea1500-RUN203_1d_grid_V_19930930-19930930.nc
+SalishSea1500-RUN203_1d_grid_V_19931001-19931001.nc
+SalishSea1500-RUN203_1d_grid_V_19931002-19931002.nc
+SalishSea1500-RUN203_1d_grid_V_19931003-19931003.nc
+SalishSea1500-RUN203_1d_grid_V_19931004-19931004.nc
+SalishSea1500-RUN203_1d_grid_V_19931005-19931005.nc
+SalishSea1500-RUN203_1d_grid_V_19931006-19931006.nc
+SalishSea1500-RUN203_1d_grid_V_19931007-19931007.nc
+SalishSea1500-RUN203_1d_grid_V_19931008-19931008.nc
+SalishSea1500-RUN203_1d_grid_V_19931009-19931009.nc
+SalishSea1500-RUN203_1d_grid_V_19931010-19931010.nc
+SalishSea1500-RUN203_1d_grid_V_19931011-19931011.nc
+SalishSea1500-RUN203_1d_grid_V_19931012-19931012.nc
+SalishSea1500-RUN203_1d_grid_V_19931013-19931013.nc
+SalishSea1500-RUN203_1d_grid_V_19931014-19931014.nc
+SalishSea1500-RUN203_1d_grid_V_19931015-19931015.nc
+SalishSea1500-RUN203_1d_grid_V_19931016-19931016.nc
+SalishSea1500-RUN203_1d_grid_V_19931017-19931017.nc
+SalishSea1500-RUN203_1d_grid_V_19931018-19931018.nc
+SalishSea1500-RUN203_1d_grid_V_19931019-19931019.nc
+SalishSea1500-RUN203_1d_grid_V_19931020-19931020.nc
+SalishSea1500-RUN203_1d_grid_V_19931021-19931021.nc
+SalishSea1500-RUN203_1d_grid_V_19931022-19931022.nc
+SalishSea1500-RUN203_1d_grid_V_19931023-19931023.nc
+SalishSea1500-RUN203_1d_grid_V_19931024-19931024.nc
+SalishSea1500-RUN203_1d_grid_V_19931025-19931025.nc
+SalishSea1500-RUN203_1d_grid_V_19931026-19931026.nc
+SalishSea1500-RUN203_1d_grid_V_19931027-19931027.nc
+SalishSea1500-RUN203_1d_grid_V_19931028-19931028.nc
+SalishSea1500-RUN203_1d_grid_V_19931029-19931029.nc
+SalishSea1500-RUN203_1d_grid_V_19931030-19931030.nc
+SalishSea1500-RUN203_1d_grid_V_19931031-19931031.nc
+SalishSea1500-RUN203_1d_grid_V_19931101-19931101.nc
+SalishSea1500-RUN203_1d_grid_V_19931102-19931102.nc
+SalishSea1500-RUN203_1d_grid_V_19931103-19931103.nc
+SalishSea1500-RUN203_1d_grid_V_19931104-19931104.nc
+SalishSea1500-RUN203_1d_grid_V_19931105-19931105.nc
+SalishSea1500-RUN203_1d_grid_V_19931106-19931106.nc
+SalishSea1500-RUN203_1d_grid_V_19931107-19931107.nc
+SalishSea1500-RUN203_1d_grid_V_19931108-19931108.nc
+SalishSea1500-RUN203_1d_grid_V_19931109-19931109.nc
+SalishSea1500-RUN203_1d_grid_V_19931110-19931110.nc
+SalishSea1500-RUN203_1d_grid_V_19931111-19931111.nc
+SalishSea1500-RUN203_1d_grid_V_19931112-19931112.nc
+SalishSea1500-RUN203_1d_grid_V_19931113-19931113.nc
+SalishSea1500-RUN203_1d_grid_V_19931114-19931114.nc
+SalishSea1500-RUN203_1d_grid_V_19931115-19931115.nc
+SalishSea1500-RUN203_1d_grid_V_19931116-19931116.nc
+SalishSea1500-RUN203_1d_grid_V_19931117-19931117.nc
+SalishSea1500-RUN203_1d_grid_V_19931118-19931118.nc
+SalishSea1500-RUN203_1d_grid_V_19931119-19931119.nc
+SalishSea1500-RUN203_1d_grid_V_19931120-19931120.nc
+SalishSea1500-RUN203_1d_grid_V_19931121-19931121.nc
+SalishSea1500-RUN203_1d_grid_V_19931122-19931122.nc
+SalishSea1500-RUN203_1d_grid_W_19930606-19930606.nc
+SalishSea1500-RUN203_1d_grid_W_19930607-19930607.nc
+SalishSea1500-RUN203_1d_grid_W_19930608-19930608.nc
+SalishSea1500-RUN203_1d_grid_W_19930609-19930609.nc
+SalishSea1500-RUN203_1d_grid_W_19930610-19930610.nc
+SalishSea1500-RUN203_1d_grid_W_19930611-19930611.nc
+SalishSea1500-RUN203_1d_grid_W_19930612-19930612.nc
+SalishSea1500-RUN203_1d_grid_W_19930613-19930613.nc
+SalishSea1500-RUN203_1d_grid_W_19930614-19930614.nc
+SalishSea1500-RUN203_1d_grid_W_19930615-19930615.nc
+SalishSea1500-RUN203_1d_grid_W_19930616-19930616.nc
+SalishSea1500-RUN203_1d_grid_W_19930617-19930617.nc
+SalishSea1500-RUN203_1d_grid_W_19930618-19930618.nc
+SalishSea1500-RUN203_1d_grid_W_19930619-19930619.nc
+SalishSea1500-RUN203_1d_grid_W_19930620-19930620.nc
+SalishSea1500-RUN203_1d_grid_W_19930621-19930621.nc
+SalishSea1500-RUN203_1d_grid_W_19930622-19930622.nc
+SalishSea1500-RUN203_1d_grid_W_19930623-19930623.nc
+SalishSea1500-RUN203_1d_grid_W_19930624-19930624.nc
+SalishSea1500-RUN203_1d_grid_W_19930625-19930625.nc
+SalishSea1500-RUN203_1d_grid_W_19930626-19930626.nc
+SalishSea1500-RUN203_1d_grid_W_19930627-19930627.nc
+SalishSea1500-RUN203_1d_grid_W_19930628-19930628.nc
+SalishSea1500-RUN203_1d_grid_W_19930629-19930629.nc
+SalishSea1500-RUN203_1d_grid_W_19930630-19930630.nc
+SalishSea1500-RUN203_1d_grid_W_19930701-19930701.nc
+SalishSea1500-RUN203_1d_grid_W_19930702-19930702.nc
+SalishSea1500-RUN203_1d_grid_W_19930703-19930703.nc
+SalishSea1500-RUN203_1d_grid_W_19930704-19930704.nc
+SalishSea1500-RUN203_1d_grid_W_19930705-19930705.nc
+SalishSea1500-RUN203_1d_grid_W_19930706-19930706.nc
+SalishSea1500-RUN203_1d_grid_W_19930707-19930707.nc
+SalishSea1500-RUN203_1d_grid_W_19930708-19930708.nc
+SalishSea1500-RUN203_1d_grid_W_19930709-19930709.nc
+SalishSea1500-RUN203_1d_grid_W_19930710-19930710.nc
+SalishSea1500-RUN203_1d_grid_W_19930711-19930711.nc
+SalishSea1500-RUN203_1d_grid_W_19930712-19930712.nc
+SalishSea1500-RUN203_1d_grid_W_19930713-19930713.nc
+SalishSea1500-RUN203_1d_grid_W_19930714-19930714.nc
+SalishSea1500-RUN203_1d_grid_W_19930715-19930715.nc
+SalishSea1500-RUN203_1d_grid_W_19930716-19930716.nc
+SalishSea1500-RUN203_1d_grid_W_19930717-19930717.nc
+SalishSea1500-RUN203_1d_grid_W_19930718-19930718.nc
+SalishSea1500-RUN203_1d_grid_W_19930719-19930719.nc
+SalishSea1500-RUN203_1d_grid_W_19930720-19930720.nc
+SalishSea1500-RUN203_1d_grid_W_19930721-19930721.nc
+SalishSea1500-RUN203_1d_grid_W_19930722-19930722.nc
+SalishSea1500-RUN203_1d_grid_W_19930723-19930723.nc
+SalishSea1500-RUN203_1d_grid_W_19930724-19930724.nc
+SalishSea1500-RUN203_1d_grid_W_19930725-19930725.nc
+SalishSea1500-RUN203_1d_grid_W_19930726-19930726.nc
+SalishSea1500-RUN203_1d_grid_W_19930727-19930727.nc
+SalishSea1500-RUN203_1d_grid_W_19930728-19930728.nc
+SalishSea1500-RUN203_1d_grid_W_19930729-19930729.nc
+SalishSea1500-RUN203_1d_grid_W_19930730-19930730.nc
+SalishSea1500-RUN203_1d_grid_W_19930731-19930731.nc
+SalishSea1500-RUN203_1d_grid_W_19930801-19930801.nc
+SalishSea1500-RUN203_1d_grid_W_19930802-19930802.nc
+SalishSea1500-RUN203_1d_grid_W_19930803-19930803.nc
+SalishSea1500-RUN203_1d_grid_W_19930804-19930804.nc
+SalishSea1500-RUN203_1d_grid_W_19930805-19930805.nc
+SalishSea1500-RUN203_1d_grid_W_19930806-19930806.nc
+SalishSea1500-RUN203_1d_grid_W_19930807-19930807.nc
+SalishSea1500-RUN203_1d_grid_W_19930808-19930808.nc
+SalishSea1500-RUN203_1d_grid_W_19930809-19930809.nc
+SalishSea1500-RUN203_1d_grid_W_19930810-19930810.nc
+SalishSea1500-RUN203_1d_grid_W_19930811-19930811.nc
+SalishSea1500-RUN203_1d_grid_W_19930812-19930812.nc
+SalishSea1500-RUN203_1d_grid_W_19930813-19930813.nc
+SalishSea1500-RUN203_1d_grid_W_19930814-19930814.nc
+SalishSea1500-RUN203_1d_grid_W_19930815-19930815.nc
+SalishSea1500-RUN203_1d_grid_W_19930816-19930816.nc
+SalishSea1500-RUN203_1d_grid_W_19930817-19930817.nc
+SalishSea1500-RUN203_1d_grid_W_19930818-19930818.nc
+SalishSea1500-RUN203_1d_grid_W_19930819-19930819.nc
+SalishSea1500-RUN203_1d_grid_W_19930820-19930820.nc
+SalishSea1500-RUN203_1d_grid_W_19930821-19930821.nc
+SalishSea1500-RUN203_1d_grid_W_19930822-19930822.nc
+SalishSea1500-RUN203_1d_grid_W_19930823-19930823.nc
+SalishSea1500-RUN203_1d_grid_W_19930824-19930824.nc
+SalishSea1500-RUN203_1d_grid_W_19930825-19930825.nc
+SalishSea1500-RUN203_1d_grid_W_19930826-19930826.nc
+SalishSea1500-RUN203_1d_grid_W_19930827-19930827.nc
+SalishSea1500-RUN203_1d_grid_W_19930828-19930828.nc
+SalishSea1500-RUN203_1d_grid_W_19930829-19930829.nc
+SalishSea1500-RUN203_1d_grid_W_19930830-19930830.nc
+SalishSea1500-RUN203_1d_grid_W_19930831-19930831.nc
+SalishSea1500-RUN203_1d_grid_W_19930901-19930901.nc
+SalishSea1500-RUN203_1d_grid_W_19930902-19930902.nc
+SalishSea1500-RUN203_1d_grid_W_19930903-19930903.nc
+SalishSea1500-RUN203_1d_grid_W_19930904-19930904.nc
+SalishSea1500-RUN203_1d_grid_W_19930905-19930905.nc
+SalishSea1500-RUN203_1d_grid_W_19930906-19930906.nc
+SalishSea1500-RUN203_1d_grid_W_19930907-19930907.nc
+SalishSea1500-RUN203_1d_grid_W_19930908-19930908.nc
+SalishSea1500-RUN203_1d_grid_W_19930909-19930909.nc
+SalishSea1500-RUN203_1d_grid_W_19930910-19930910.nc
+SalishSea1500-RUN203_1d_grid_W_19930911-19930911.nc
+SalishSea1500-RUN203_1d_grid_W_19930912-19930912.nc
+SalishSea1500-RUN203_1d_grid_W_19930913-19930913.nc
+SalishSea1500-RUN203_1d_grid_W_19930914-19930914.nc
+SalishSea1500-RUN203_1d_grid_W_19930915-19930915.nc
+SalishSea1500-RUN203_1d_grid_W_19930916-19930916.nc
+SalishSea1500-RUN203_1d_grid_W_19930917-19930917.nc
+SalishSea1500-RUN203_1d_grid_W_19930918-19930918.nc
+SalishSea1500-RUN203_1d_grid_W_19930919-19930919.nc
+SalishSea1500-RUN203_1d_grid_W_19930920-19930920.nc
+SalishSea1500-RUN203_1d_grid_W_19930921-19930921.nc
+SalishSea1500-RUN203_1d_grid_W_19930922-19930922.nc
+SalishSea1500-RUN203_1d_grid_W_19930923-19930923.nc
+SalishSea1500-RUN203_1d_grid_W_19930924-19930924.nc
+SalishSea1500-RUN203_1d_grid_W_19930925-19930925.nc
+SalishSea1500-RUN203_1d_grid_W_19930926-19930926.nc
+SalishSea1500-RUN203_1d_grid_W_19930927-19930927.nc
+SalishSea1500-RUN203_1d_grid_W_19930928-19930928.nc
+SalishSea1500-RUN203_1d_grid_W_19930929-19930929.nc
+SalishSea1500-RUN203_1d_grid_W_19930930-19930930.nc
+SalishSea1500-RUN203_1d_grid_W_19931001-19931001.nc
+SalishSea1500-RUN203_1d_grid_W_19931002-19931002.nc
+SalishSea1500-RUN203_1d_grid_W_19931003-19931003.nc
+SalishSea1500-RUN203_1d_grid_W_19931004-19931004.nc
+SalishSea1500-RUN203_1d_grid_W_19931005-19931005.nc
+SalishSea1500-RUN203_1d_grid_W_19931006-19931006.nc
+SalishSea1500-RUN203_1d_grid_W_19931007-19931007.nc
+SalishSea1500-RUN203_1d_grid_W_19931008-19931008.nc
+SalishSea1500-RUN203_1d_grid_W_19931009-19931009.nc
+SalishSea1500-RUN203_1d_grid_W_19931010-19931010.nc
+SalishSea1500-RUN203_1d_grid_W_19931011-19931011.nc
+SalishSea1500-RUN203_1d_grid_W_19931012-19931012.nc
+SalishSea1500-RUN203_1d_grid_W_19931013-19931013.nc
+SalishSea1500-RUN203_1d_grid_W_19931014-19931014.nc
+SalishSea1500-RUN203_1d_grid_W_19931015-19931015.nc
+SalishSea1500-RUN203_1d_grid_W_19931016-19931016.nc
+SalishSea1500-RUN203_1d_grid_W_19931017-19931017.nc
+SalishSea1500-RUN203_1d_grid_W_19931018-19931018.nc
+SalishSea1500-RUN203_1d_grid_W_19931019-19931019.nc
+SalishSea1500-RUN203_1d_grid_W_19931020-19931020.nc
+SalishSea1500-RUN203_1d_grid_W_19931021-19931021.nc
+SalishSea1500-RUN203_1d_grid_W_19931022-19931022.nc
+SalishSea1500-RUN203_1d_grid_W_19931023-19931023.nc
+SalishSea1500-RUN203_1d_grid_W_19931024-19931024.nc
+SalishSea1500-RUN203_1d_grid_W_19931025-19931025.nc
+SalishSea1500-RUN203_1d_grid_W_19931026-19931026.nc
+SalishSea1500-RUN203_1d_grid_W_19931027-19931027.nc
+SalishSea1500-RUN203_1d_grid_W_19931028-19931028.nc
+SalishSea1500-RUN203_1d_grid_W_19931029-19931029.nc
+SalishSea1500-RUN203_1d_grid_W_19931030-19931030.nc
+SalishSea1500-RUN203_1d_grid_W_19931031-19931031.nc
+SalishSea1500-RUN203_1d_grid_W_19931101-19931101.nc
+SalishSea1500-RUN203_1d_grid_W_19931102-19931102.nc
+SalishSea1500-RUN203_1d_grid_W_19931103-19931103.nc
+SalishSea1500-RUN203_1d_grid_W_19931104-19931104.nc
+SalishSea1500-RUN203_1d_grid_W_19931105-19931105.nc
+SalishSea1500-RUN203_1d_grid_W_19931106-19931106.nc
+SalishSea1500-RUN203_1d_grid_W_19931107-19931107.nc
+SalishSea1500-RUN203_1d_grid_W_19931108-19931108.nc
+SalishSea1500-RUN203_1d_grid_W_19931109-19931109.nc
+SalishSea1500-RUN203_1d_grid_W_19931110-19931110.nc
+SalishSea1500-RUN203_1d_grid_W_19931111-19931111.nc
+SalishSea1500-RUN203_1d_grid_W_19931112-19931112.nc
+SalishSea1500-RUN203_1d_grid_W_19931113-19931113.nc
+SalishSea1500-RUN203_1d_grid_W_19931114-19931114.nc
+SalishSea1500-RUN203_1d_grid_W_19931115-19931115.nc
+SalishSea1500-RUN203_1d_grid_W_19931116-19931116.nc
+SalishSea1500-RUN203_1d_grid_W_19931117-19931117.nc
+SalishSea1500-RUN203_1d_grid_W_19931118-19931118.nc
+SalishSea1500-RUN203_1d_grid_W_19931119-19931119.nc
+SalishSea1500-RUN203_1d_grid_W_19931120-19931120.nc
+SalishSea1500-RUN203_1d_grid_W_19931121-19931121.nc
+SalishSea1500-RUN203_1d_grid_W_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_T_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_T_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_T_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_T_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_T_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_T_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_T_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_T_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_T_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_T_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_T_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_T_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_T_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_T_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_T_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_T_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_T_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_T_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_T_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_T_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_T_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_T_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_T_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_T_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_T_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_T_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_T_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_T_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_T_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_T_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_T_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_T_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_T_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_T_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_T_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_T_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_T_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_T_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_T_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_T_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_T_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_T_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_T_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_T_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_T_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_T_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_T_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_T_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_T_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_T_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_T_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_T_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_T_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_T_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_T_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_T_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_T_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_T_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_T_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_T_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_T_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_T_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_T_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_T_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_T_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_T_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_T_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_T_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_T_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_T_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_T_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_T_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_T_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_T_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_T_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_T_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_T_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_T_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_T_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_T_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_T_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_T_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_T_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_T_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_T_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_T_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_T_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_T_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_T_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_T_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_T_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_T_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_T_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_T_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_T_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_T_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_T_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_T_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_T_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_T_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_T_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_T_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_T_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_T_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_T_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_T_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_T_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_T_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_T_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_T_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_T_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_T_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_T_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_T_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_T_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_T_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_T_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_T_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_T_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_T_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_T_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_T_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_T_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_T_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_T_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_T_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_T_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_T_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_T_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_T_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_T_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_T_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_T_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_T_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_T_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_T_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_T_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_T_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_T_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_T_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_T_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_T_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_T_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_T_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_T_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_T_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_T_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_T_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_T_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_T_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_T_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_T_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_T_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_T_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_T_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_T_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_T_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_T_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_T_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_T_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_T_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_T_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_T_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_T_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_T_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_T_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_T_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_T_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_T_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_T_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_T_2D_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_U_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_U_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_U_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_U_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_U_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_U_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_U_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_U_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_U_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_U_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_U_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_U_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_U_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_U_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_U_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_U_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_U_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_U_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_U_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_U_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_U_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_U_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_U_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_U_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_U_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_U_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_U_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_U_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_U_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_U_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_U_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_U_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_U_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_U_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_U_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_U_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_U_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_U_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_U_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_U_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_U_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_U_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_U_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_U_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_U_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_U_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_U_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_U_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_U_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_U_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_U_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_U_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_U_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_U_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_U_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_U_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_U_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_U_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_U_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_U_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_U_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_U_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_U_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_U_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_U_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_U_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_U_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_U_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_U_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_U_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_U_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_U_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_U_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_U_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_U_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_U_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_U_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_U_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_U_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_U_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_U_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_U_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_U_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_U_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_U_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_U_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_U_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_U_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_U_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_U_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_U_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_U_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_U_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_U_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_U_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_U_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_U_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_U_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_U_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_U_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_U_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_U_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_U_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_U_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_U_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_U_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_U_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_U_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_U_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_U_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_U_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_U_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_U_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_U_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_U_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_U_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_U_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_U_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_U_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_U_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_U_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_U_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_U_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_U_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_U_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_U_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_U_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_U_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_U_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_U_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_U_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_U_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_U_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_U_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_U_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_U_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_U_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_U_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_U_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_U_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_U_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_U_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_U_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_U_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_U_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_U_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_U_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_U_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_U_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_U_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_U_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_U_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_U_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_U_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_U_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_U_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_U_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_U_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_U_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_U_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_U_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_U_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_U_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_U_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_U_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_U_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_U_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_U_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_U_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_U_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_U_2D_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_V_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_V_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_V_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_V_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_V_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_V_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_V_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_V_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_V_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_V_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_V_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_V_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_V_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_V_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_V_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_V_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_V_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_V_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_V_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_V_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_V_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_V_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_V_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_V_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_V_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_V_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_V_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_V_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_V_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_V_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_V_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_V_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_V_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_V_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_V_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_V_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_V_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_V_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_V_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_V_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_V_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_V_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_V_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_V_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_V_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_V_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_V_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_V_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_V_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_V_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_V_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_V_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_V_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_V_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_V_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_V_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_V_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_V_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_V_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_V_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_V_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_V_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_V_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_V_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_V_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_V_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_V_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_V_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_V_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_V_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_V_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_V_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_V_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_V_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_V_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_V_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_V_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_V_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_V_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_V_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_V_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_V_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_V_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_V_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_V_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_V_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_V_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_V_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_V_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_V_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_V_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_V_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_V_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_V_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_V_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_V_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_V_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_V_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_V_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_V_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_V_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_V_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_V_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_V_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_V_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_V_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_V_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_V_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_V_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_V_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_V_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_V_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_V_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_V_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_V_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_V_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_V_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_V_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_V_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_V_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_V_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_V_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_V_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_V_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_V_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_V_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_V_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_V_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_V_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_V_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_V_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_V_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_V_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_V_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_V_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_V_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_V_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_V_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_V_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_V_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_V_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_V_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_V_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_V_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_V_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_V_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_V_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_V_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_V_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_V_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_V_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_V_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_V_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_V_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_V_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_V_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_V_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_V_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_V_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_V_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_V_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_V_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_V_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_V_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_V_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_V_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_V_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_V_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_V_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_V_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_V_2D_19931122-19931122.nc
+SalishSea1500-RUN203_1h_grid_W_19930606-19930606.nc
+SalishSea1500-RUN203_1h_grid_W_19930607-19930607.nc
+SalishSea1500-RUN203_1h_grid_W_19930608-19930608.nc
+SalishSea1500-RUN203_1h_grid_W_19930609-19930609.nc
+SalishSea1500-RUN203_1h_grid_W_19930610-19930610.nc
+SalishSea1500-RUN203_1h_grid_W_19930611-19930611.nc
+SalishSea1500-RUN203_1h_grid_W_19930612-19930612.nc
+SalishSea1500-RUN203_1h_grid_W_19930613-19930613.nc
+SalishSea1500-RUN203_1h_grid_W_19930614-19930614.nc
+SalishSea1500-RUN203_1h_grid_W_19930615-19930615.nc
+SalishSea1500-RUN203_1h_grid_W_19930616-19930616.nc
+SalishSea1500-RUN203_1h_grid_W_19930617-19930617.nc
+SalishSea1500-RUN203_1h_grid_W_19930618-19930618.nc
+SalishSea1500-RUN203_1h_grid_W_19930619-19930619.nc
+SalishSea1500-RUN203_1h_grid_W_19930620-19930620.nc
+SalishSea1500-RUN203_1h_grid_W_19930621-19930621.nc
+SalishSea1500-RUN203_1h_grid_W_19930622-19930622.nc
+SalishSea1500-RUN203_1h_grid_W_19930623-19930623.nc
+SalishSea1500-RUN203_1h_grid_W_19930624-19930624.nc
+SalishSea1500-RUN203_1h_grid_W_19930625-19930625.nc
+SalishSea1500-RUN203_1h_grid_W_19930626-19930626.nc
+SalishSea1500-RUN203_1h_grid_W_19930627-19930627.nc
+SalishSea1500-RUN203_1h_grid_W_19930628-19930628.nc
+SalishSea1500-RUN203_1h_grid_W_19930629-19930629.nc
+SalishSea1500-RUN203_1h_grid_W_19930630-19930630.nc
+SalishSea1500-RUN203_1h_grid_W_19930701-19930701.nc
+SalishSea1500-RUN203_1h_grid_W_19930702-19930702.nc
+SalishSea1500-RUN203_1h_grid_W_19930703-19930703.nc
+SalishSea1500-RUN203_1h_grid_W_19930704-19930704.nc
+SalishSea1500-RUN203_1h_grid_W_19930705-19930705.nc
+SalishSea1500-RUN203_1h_grid_W_19930706-19930706.nc
+SalishSea1500-RUN203_1h_grid_W_19930707-19930707.nc
+SalishSea1500-RUN203_1h_grid_W_19930708-19930708.nc
+SalishSea1500-RUN203_1h_grid_W_19930709-19930709.nc
+SalishSea1500-RUN203_1h_grid_W_19930710-19930710.nc
+SalishSea1500-RUN203_1h_grid_W_19930711-19930711.nc
+SalishSea1500-RUN203_1h_grid_W_19930712-19930712.nc
+SalishSea1500-RUN203_1h_grid_W_19930713-19930713.nc
+SalishSea1500-RUN203_1h_grid_W_19930714-19930714.nc
+SalishSea1500-RUN203_1h_grid_W_19930715-19930715.nc
+SalishSea1500-RUN203_1h_grid_W_19930716-19930716.nc
+SalishSea1500-RUN203_1h_grid_W_19930717-19930717.nc
+SalishSea1500-RUN203_1h_grid_W_19930718-19930718.nc
+SalishSea1500-RUN203_1h_grid_W_19930719-19930719.nc
+SalishSea1500-RUN203_1h_grid_W_19930720-19930720.nc
+SalishSea1500-RUN203_1h_grid_W_19930721-19930721.nc
+SalishSea1500-RUN203_1h_grid_W_19930722-19930722.nc
+SalishSea1500-RUN203_1h_grid_W_19930723-19930723.nc
+SalishSea1500-RUN203_1h_grid_W_19930724-19930724.nc
+SalishSea1500-RUN203_1h_grid_W_19930725-19930725.nc
+SalishSea1500-RUN203_1h_grid_W_19930726-19930726.nc
+SalishSea1500-RUN203_1h_grid_W_19930727-19930727.nc
+SalishSea1500-RUN203_1h_grid_W_19930728-19930728.nc
+SalishSea1500-RUN203_1h_grid_W_19930729-19930729.nc
+SalishSea1500-RUN203_1h_grid_W_19930730-19930730.nc
+SalishSea1500-RUN203_1h_grid_W_19930731-19930731.nc
+SalishSea1500-RUN203_1h_grid_W_19930801-19930801.nc
+SalishSea1500-RUN203_1h_grid_W_19930802-19930802.nc
+SalishSea1500-RUN203_1h_grid_W_19930803-19930803.nc
+SalishSea1500-RUN203_1h_grid_W_19930804-19930804.nc
+SalishSea1500-RUN203_1h_grid_W_19930805-19930805.nc
+SalishSea1500-RUN203_1h_grid_W_19930806-19930806.nc
+SalishSea1500-RUN203_1h_grid_W_19930807-19930807.nc
+SalishSea1500-RUN203_1h_grid_W_19930808-19930808.nc
+SalishSea1500-RUN203_1h_grid_W_19930809-19930809.nc
+SalishSea1500-RUN203_1h_grid_W_19930810-19930810.nc
+SalishSea1500-RUN203_1h_grid_W_19930811-19930811.nc
+SalishSea1500-RUN203_1h_grid_W_19930812-19930812.nc
+SalishSea1500-RUN203_1h_grid_W_19930813-19930813.nc
+SalishSea1500-RUN203_1h_grid_W_19930814-19930814.nc
+SalishSea1500-RUN203_1h_grid_W_19930815-19930815.nc
+SalishSea1500-RUN203_1h_grid_W_19930816-19930816.nc
+SalishSea1500-RUN203_1h_grid_W_19930817-19930817.nc
+SalishSea1500-RUN203_1h_grid_W_19930818-19930818.nc
+SalishSea1500-RUN203_1h_grid_W_19930819-19930819.nc
+SalishSea1500-RUN203_1h_grid_W_19930820-19930820.nc
+SalishSea1500-RUN203_1h_grid_W_19930821-19930821.nc
+SalishSea1500-RUN203_1h_grid_W_19930822-19930822.nc
+SalishSea1500-RUN203_1h_grid_W_19930823-19930823.nc
+SalishSea1500-RUN203_1h_grid_W_19930824-19930824.nc
+SalishSea1500-RUN203_1h_grid_W_19930825-19930825.nc
+SalishSea1500-RUN203_1h_grid_W_19930826-19930826.nc
+SalishSea1500-RUN203_1h_grid_W_19930827-19930827.nc
+SalishSea1500-RUN203_1h_grid_W_19930828-19930828.nc
+SalishSea1500-RUN203_1h_grid_W_19930829-19930829.nc
+SalishSea1500-RUN203_1h_grid_W_19930830-19930830.nc
+SalishSea1500-RUN203_1h_grid_W_19930831-19930831.nc
+SalishSea1500-RUN203_1h_grid_W_19930901-19930901.nc
+SalishSea1500-RUN203_1h_grid_W_19930902-19930902.nc
+SalishSea1500-RUN203_1h_grid_W_19930903-19930903.nc
+SalishSea1500-RUN203_1h_grid_W_19930904-19930904.nc
+SalishSea1500-RUN203_1h_grid_W_19930905-19930905.nc
+SalishSea1500-RUN203_1h_grid_W_19930906-19930906.nc
+SalishSea1500-RUN203_1h_grid_W_19930907-19930907.nc
+SalishSea1500-RUN203_1h_grid_W_19930908-19930908.nc
+SalishSea1500-RUN203_1h_grid_W_19930909-19930909.nc
+SalishSea1500-RUN203_1h_grid_W_19930910-19930910.nc
+SalishSea1500-RUN203_1h_grid_W_19930911-19930911.nc
+SalishSea1500-RUN203_1h_grid_W_19930912-19930912.nc
+SalishSea1500-RUN203_1h_grid_W_19930913-19930913.nc
+SalishSea1500-RUN203_1h_grid_W_19930914-19930914.nc
+SalishSea1500-RUN203_1h_grid_W_19930915-19930915.nc
+SalishSea1500-RUN203_1h_grid_W_19930916-19930916.nc
+SalishSea1500-RUN203_1h_grid_W_19930917-19930917.nc
+SalishSea1500-RUN203_1h_grid_W_19930918-19930918.nc
+SalishSea1500-RUN203_1h_grid_W_19930919-19930919.nc
+SalishSea1500-RUN203_1h_grid_W_19930920-19930920.nc
+SalishSea1500-RUN203_1h_grid_W_19930921-19930921.nc
+SalishSea1500-RUN203_1h_grid_W_19930922-19930922.nc
+SalishSea1500-RUN203_1h_grid_W_19930923-19930923.nc
+SalishSea1500-RUN203_1h_grid_W_19930924-19930924.nc
+SalishSea1500-RUN203_1h_grid_W_19930925-19930925.nc
+SalishSea1500-RUN203_1h_grid_W_19930926-19930926.nc
+SalishSea1500-RUN203_1h_grid_W_19930927-19930927.nc
+SalishSea1500-RUN203_1h_grid_W_19930928-19930928.nc
+SalishSea1500-RUN203_1h_grid_W_19930929-19930929.nc
+SalishSea1500-RUN203_1h_grid_W_19930930-19930930.nc
+SalishSea1500-RUN203_1h_grid_W_19931001-19931001.nc
+SalishSea1500-RUN203_1h_grid_W_19931002-19931002.nc
+SalishSea1500-RUN203_1h_grid_W_19931003-19931003.nc
+SalishSea1500-RUN203_1h_grid_W_19931004-19931004.nc
+SalishSea1500-RUN203_1h_grid_W_19931005-19931005.nc
+SalishSea1500-RUN203_1h_grid_W_19931006-19931006.nc
+SalishSea1500-RUN203_1h_grid_W_19931007-19931007.nc
+SalishSea1500-RUN203_1h_grid_W_19931008-19931008.nc
+SalishSea1500-RUN203_1h_grid_W_19931009-19931009.nc
+SalishSea1500-RUN203_1h_grid_W_19931010-19931010.nc
+SalishSea1500-RUN203_1h_grid_W_19931011-19931011.nc
+SalishSea1500-RUN203_1h_grid_W_19931012-19931012.nc
+SalishSea1500-RUN203_1h_grid_W_19931013-19931013.nc
+SalishSea1500-RUN203_1h_grid_W_19931014-19931014.nc
+SalishSea1500-RUN203_1h_grid_W_19931015-19931015.nc
+SalishSea1500-RUN203_1h_grid_W_19931016-19931016.nc
+SalishSea1500-RUN203_1h_grid_W_19931017-19931017.nc
+SalishSea1500-RUN203_1h_grid_W_19931018-19931018.nc
+SalishSea1500-RUN203_1h_grid_W_19931019-19931019.nc
+SalishSea1500-RUN203_1h_grid_W_19931020-19931020.nc
+SalishSea1500-RUN203_1h_grid_W_19931021-19931021.nc
+SalishSea1500-RUN203_1h_grid_W_19931022-19931022.nc
+SalishSea1500-RUN203_1h_grid_W_19931023-19931023.nc
+SalishSea1500-RUN203_1h_grid_W_19931024-19931024.nc
+SalishSea1500-RUN203_1h_grid_W_19931025-19931025.nc
+SalishSea1500-RUN203_1h_grid_W_19931026-19931026.nc
+SalishSea1500-RUN203_1h_grid_W_19931027-19931027.nc
+SalishSea1500-RUN203_1h_grid_W_19931028-19931028.nc
+SalishSea1500-RUN203_1h_grid_W_19931029-19931029.nc
+SalishSea1500-RUN203_1h_grid_W_19931030-19931030.nc
+SalishSea1500-RUN203_1h_grid_W_19931031-19931031.nc
+SalishSea1500-RUN203_1h_grid_W_19931101-19931101.nc
+SalishSea1500-RUN203_1h_grid_W_19931102-19931102.nc
+SalishSea1500-RUN203_1h_grid_W_19931103-19931103.nc
+SalishSea1500-RUN203_1h_grid_W_19931104-19931104.nc
+SalishSea1500-RUN203_1h_grid_W_19931105-19931105.nc
+SalishSea1500-RUN203_1h_grid_W_19931106-19931106.nc
+SalishSea1500-RUN203_1h_grid_W_19931107-19931107.nc
+SalishSea1500-RUN203_1h_grid_W_19931108-19931108.nc
+SalishSea1500-RUN203_1h_grid_W_19931109-19931109.nc
+SalishSea1500-RUN203_1h_grid_W_19931110-19931110.nc
+SalishSea1500-RUN203_1h_grid_W_19931111-19931111.nc
+SalishSea1500-RUN203_1h_grid_W_19931112-19931112.nc
+SalishSea1500-RUN203_1h_grid_W_19931113-19931113.nc
+SalishSea1500-RUN203_1h_grid_W_19931114-19931114.nc
+SalishSea1500-RUN203_1h_grid_W_19931115-19931115.nc
+SalishSea1500-RUN203_1h_grid_W_19931116-19931116.nc
+SalishSea1500-RUN203_1h_grid_W_19931117-19931117.nc
+SalishSea1500-RUN203_1h_grid_W_19931118-19931118.nc
+SalishSea1500-RUN203_1h_grid_W_19931119-19931119.nc
+SalishSea1500-RUN203_1h_grid_W_19931120-19931120.nc
+SalishSea1500-RUN203_1h_grid_W_19931121-19931121.nc
+SalishSea1500-RUN203_1h_grid_W_19931122-19931122.nc
+
+sent 143,149,789,782 bytes  received 38,776 bytes  81,729,847.88 bytes/sec
+total size is 143,114,723,040  speedup is 1.00
+sending incremental file list
+SalishSea1500-RUN203_03916800_restart.nc
+
+sent 283,294,416 bytes  received 35 bytes  80,941,271.71 bytes/sec
+total size is 283,225,144  speedup is 1.00
+Automatic resubmit for job 033
++ . ./environment.ksh
++ set -ax
++ MACHINE=gpsc4
++ CONTAINER=dfo/dfo_all_default_ubuntu-18.04-amd64_latest
++ PROJECT=rrg-nereusvc
++ TIMELIMIT=09:00:00
++ TIMELIMIT_PP=12:00:00
++ MEMLIMIT=3900M
++ QUEUE=dev
++ JPNI=5
++ JPNJ=19
++ NBPROC=95
++ NBPROC_XIO=1
++ expr 95 + 1
++ TOTPROC=96
++ MAXSUB=86
++ NDATEDEB=19790101
++ PASDETEMPS=120
++ NNBARO=20
++ NNSTOCK=122400
++ SPLIT_FREQ=170
++ MESHRUN=no
++ RESTART=no
++ CONF_NAME=SalishSea1500
++ CONF_NBR=RUN203
++ CONFIG=SalishSea1500-RUN203
++ SEAICE_MODULE=NONE
++ ATMOS_DATA=NONE
++ OBC_ACTIVE=no
++ TIDE_ACTIVE=no
++ TIDE_2Dfile=no
++ RIVER_ACTIVE=no
++ DIR_CALCU_EXE=/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SalishSea1500/BLD/bin
++ DIR_CALCU_SHR=/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SHARED
++ DIR_CALCU_RBL=/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/TOOLS/REBUILD_NEMO
++ DIR_CALCU_XIO=/home/mdunphy/project/mdunphy/Software/XIOS/bin
++ DIR_CALCU_CTL=/home/mdunphy/project/mdunphy/control/SalishSea1500-RUN203
++ DIR_CALCU_UTL=/home/mdunphy/bin
++ DIR_ARCHI_FORC=/home/mdunphy/project/mdunphy/Forcing/grid
++ DIR_ARCHI_ATMOS=/home/mdunphy/project/mdunphy/Forcing/OPPwestSS
++ DIR_ARCHI_INPUT=/home/mdunphy/project/mdunphy/Forcing/grid
++ DIR_ARCHI_CLIM=/unused
++ DIR_ARCHI_OBC=/unused
++ DIR_ARCHI_OBCN=/unused
++ DIR_ARCHI_TIDE=/unused
++ DIR_ARCHI_HOME=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203
++ DIR_ARCHI_CDF=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/CDF
++ DIR_ARCHI_LOG=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/LOG
++ DIR_ARCHI_RST=/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203 ]
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST ]
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/CDF ]
++ [ ! -d /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/LOG ]
++ DIR_TMP_HOME=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203
++ DIR_TMP_RST=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RST
++ DIR_TMP_CDF=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/CDF
++ DIR_TMP_LOG=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/LOG
++ DIR_TMP_RUN=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN
++ DIR_TMP_ATM=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/ATMDATA
++ DIR_TMP_OBC=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/BDY
++ DIR_TMP_RVR=/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/RIVER
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203 ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RST ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/CDF ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/LOG ]
++ [ ! -d /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN ]
++ EXEC_NAME=nemo.exe
++ BATMET_FIL=bathy_salishsea_1500m_20210706.nc
++ COORD_FIL=coordinates_salishsea_1500m.nc
++ BATLE_FIL=''
++ BFRI_FIL=''
++ SHLAT_FIL=''
++ TEMP_FIL=''
++ SAL_FIL=''
++ U_FIL=''
++ V_FIL=''
++ SSH_FIL=''
++ RUNOFF_FIL=''
++ RUNOFF_TEMP_FIL=''
++ RUNOFF_MASK_FIL=''
++ CHLA_FIL=''
++ RGB_FIL=''
++ INITICE_FIL=''
++ CICE_GRID=''
++ compo_list=M2
++ TIDE_PREF=''
++ TIDEH_FIL=''
++ TIDEU_FIL=''
++ TIDEV_FIL=''
++ TMX_K1=''
++ TMX_M2=''
++ TMX_MASK=''
++ TMX_MASK=''
++ DUST_FIL=''
++ RIVER_FIL=''
++ obc_list=''
++ obcpref2D=''
++ obcsuf2D=''
++ obcprefNorth=''
++ WEIGHTS_FIL=weights_bilin_OPPwestSS.nc
++ RESTART_FILE=/home/mdunphy/MEOPAR/forcing/restart/hindcast.201812/31dec15/SalishSea_01682640_restart.nc
+
+Configuration name : SalishSea1500-RUN203
+Number of procs : 95
+
+Initialisation from climatology or analytical profiles
+
+
+home : /home/mdunphy
+
+CALCU directories :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SalishSea1500/BLD/bin : directory where is the NEMO executable
+/home/mdunphy/project/mdunphy/Software/NEMO36OPP/NEMOGCM/CONFIG/SHARED : directory where is the shared files
+/home/mdunphy/project/mdunphy/Software/XIOS/bin : directory where is the XIOS server
+/home/mdunphy/project/mdunphy/control/SalishSea1500-RUN203 : directory where are control files of the run
+/home/mdunphy/bin : directory where to find utilities
+
+MACHINEARCHI directories :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/mdunphy/project/mdunphy/Forcing/OPPwestSS : directory to stock the atmos forcing fields
+/home/mdunphy/project/mdunphy/Forcing/grid : directory for the input files
+/unused : directory for the climatology files
+/unused : directory for the obc files
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203 : directory to stock the results
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST : directory to stock the restarts
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/CDF : directory for combined netCDF results
+/home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/LOG : directory for ice something ...
+
+TEMP directories :
+~~~~~~~~~~~~~~~~~~~~
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203 : home temp directory
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RST : directory for the restart
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/CDF : directory for the cdf
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/LOG : directory for the log
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN : directory to run
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/ATMDATA : directory for the atmos forcing
+/home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/BDY : directory for the obc files
+
+Run features :
+~~~~~~~~~~~~~~
+Executable name : nemo.exe
+Bathymetry : bathy_salishsea_1500m_20210706.nc
+Coordinates : coordinates_salishsea_1500m.nc
+K1 tidal mixing :
+M2 tidal mixing :
+Mask tidal mixing :
+Shlat :
+Clim T :
+Clim S :
+Clim U :
+Clim V :
+Runoff :
+Chlorophyl :
+List of the open boundaries :
+
+ G O O D   T O   G O !!!
+170 days to run, starting 19931123 (16032) ending 19940512 (16202)
+FOUND COMBINED RESTART FILE:  /home/mdunphy/project/mdunphy/nemo_results/SalishSea1500/SalishSea1500-RUN203/RST/SalishSea1500-RUN203_03916800_restart.nc
+Submitting job, 96 cores, 09:00:00s runlimit, control path /home/mdunphy/project/mdunphy/control/SalishSea1500-RUN203
+sbatch --time=09:00:00 --job-name=RUN203 --mem-per-cpu=3900M --ntasks=96 -o /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/nemo.stdout -e /home/mdunphy/scratch/nemo_temp/SalishSea1500/SalishSea1500-RUN203/RUN/nemo.stderr RUN203.ksh
+Submitted batch job 62085562

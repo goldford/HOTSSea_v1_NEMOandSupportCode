@@ -1,0 +1,148 @@
+## Reference config file
+## This sets the default parameters akin to NEMO's namelist_ref
+
+### top level
+config: Default_config
+runid: Default_runid
+
+# --- DOMAIN GEOMETRY
+file_bathy: setme.nc
+file_coord: setme.nc
+file_mesh:  setme.nc
+
+# Polygons defining the analysis area:
+#  Paths to text files with two columns [lon lat] whitespace-separated;
+#  the polygon can be multiply-connected with nan separation;
+#  segments must be closed (first and last points must coincide)
+#  Both polygon_include and polygon_exclude can be supplied.
+polygon_include: null
+polygon_exclude: null
+
+src_output_dir: /dev/null
+output_path: /dev/null
+
+obs:
+  root: /home/sdfo600/DATA/OBS-TEST
+  name: "OBS-TEST"
+
+verbose: 0
+waterlevel_offset: 0.0
+
+# Some operations are parallelized
+parallel: True
+nproc: 42
+
+# Default instruments to process
+instruments: ['CTD', 'LH', 'SST']
+
+### EXTRACTION ###
+extract:
+  CTD:
+    pattern: '*_1d_grid_T_[0-9][0-9]*'
+    time_var: 'time_counter'
+    time_offset: 0
+    temperature: 'votemper'
+    salinity: 'vosaline'
+  LH:
+    pattern: '*_1d_grid_T_[0-9][0-9]*'
+    time_var: 'time_counter'
+    time_offset: 0
+    temperature: 'votemper'
+    salinity: 'vosaline'
+    exclude: []
+  SST:
+    pattern: '*_1h_grid_T_[0-9][0-9]*'
+    time_var: 'time_counter'
+    time_offset: 0
+    temperature: 'votemper'
+
+### ANALYSIS ###
+analysis:
+  save_pickle: True  # Save analysis result in pickle format
+  save_mat: True     # Save analysis result in MATLAB .mat format
+  #periods:
+  #  example1: [1900-01-01, 2000-01-01]
+
+  CTD:
+    domain_file: setme.yaml
+    # Threshold for detecting outlier profiles.
+    # Outliers are detected as those with (mod-obs) outside of +-thres*std range in any of the layers
+    # based on all profiles in each of the sub-regions defined in domain_file.
+    std_thres: None
+
+
+### PLOTTING ###
+plot:
+  CTD:
+    # minimum number of casts required for bias and RMSE in a region to be included
+    minimum_samples_per_region: 5
+
+  map:
+    xlim: [-161, 154] # Placeholder values
+    ylim: [18, 23]
+
+  colors:    # named colours are from Paul Tol's bright colour scheme: https://personal.sron.nl/~pault/#fig:scheme_bright
+    obs  : '#000000'
+    mod  : '#ff0000'
+    land : '#888888'
+    cross: '#666666'
+    zero : '#888888'
+    grid : '#999999'
+    blue   : '#4477aa'
+    cyan   : '#66ccee'
+    green  : '#228833'
+    yellow : '#ccbb44'
+    red    : '#ee6677'
+    purple : '#aa3377'
+    grey   : '#bbbbbb'
+
+  fonts:
+    meta_sz: 10
+    map_sz :  8
+
+  ellipse:
+    gap: 20
+    sz : 10
+    lw : 2
+    cross_sz: 0.5
+    axes_sz : 1.2
+    axes_round : 2
+    pt_sz : 75
+    scale: 0.10
+
+  residual:
+    lw : 1
+
+  # use of default file will be very useful here.
+  # todo: expand to have a default plotting config file.
+  # cm colourmap, colour min/max, size of dot
+  statistics:
+    pt_size: 100
+    ncolors: 10
+    cmap: {'rmse': 'matter_r', 'pearson': 'matter', 'gamma2':'matter_r'}
+    lims: {'rmse': [0,1], 'pearson': [0,2], 'gamma2':[0,1]}
+    use_lims: {'rmse': True, 'pearson': True, 'gamma2':True}
+
+  # todo: this is a weird way to do this but see if it works and then amend
+  list_scores : ['rmse', 'pearson', 'gamma2']
+
+  # Options are page, slide, and article
+  figure_layout: 'page'
+
+  # File formats for saving figures. Should be supported by plt.savefig()
+  file_formats: ['png', 'pdf', 'svg']
+
+  # Legend location.  Options are map, stat, ts.
+  legend: 'map'
+
+SST:
+    histogram_bins: 30
+
+
+### SCORES ###
+score:
+  statistics: ['mean_obs', 'mean_mod', 'bias', 'rmse', 'skill1981', 'gamma2', 'pearson', 'crmse', 'mae', 'mad', 'stdev_obs', 'stdev_mod']
+  
+  # removed var_frac - GO 2023 May
+  #statistics: ['mean_obs', 'mean_mod', 'bias', 'rmse', 'skill1981', 'gamma2', 'pearson', 'crmse', 'mae', 'mad', 'stdev_obs', 'stdev_mod', 'var_frac']
+  statistics_vector: ['mean_obs', 'mean_mod', 'bias', 'rmse', 'crmse', 'gamma2', 'vector_correlation', 'vector_correlation_magnitude', 'vector_correlation_degrees']

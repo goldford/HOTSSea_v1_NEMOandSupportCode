@@ -1,0 +1,79 @@
+# testing runs ss500 versus incremental ss1500 runs
+
+# Directory to store comparisons
+output_path: /project/6006412/goldford/ANALYSIS/SalishSea1500-ALLRUNS_test
+
+# Models to compare and colours associated with each
+mods:
+
+  - optfile: /project/6006412/goldford/gitlab_pyap_fork20230331/config/mid002/SS1500/SalishSea500-201905_GO.yaml
+    color:  'm'
+    marker: 'o'
+    lineweight: 0.7
+
+  - optfile: /project/6006412/goldford/gitlab_pyap_fork20230331/config/mid002/SS1500/SalishSea1500-RUN100_GO.yaml
+    color:  'y'
+    marker: 'o'
+    lineweight: 0.7
+
+
+  #- optfile: /project/6006412/goldford/gitlab_pyap_fork20230331/config/mid002/SS1500/SalishSea1500-RUN120_GO.yaml
+  #  color:  'c'
+  #  marker: 'o'
+  #  lineweight: 1
+
+  - optfile: /project/6006412/goldford/gitlab_pyap_fork20230331/config/mid002/SS1500/SalishSea1500-RUN141_GO.yaml
+    color:  'c'
+    marker: 'o'
+    lineweight: 0.7
+
+  - optfile: /project/6006412/goldford/gitlab_pyap_fork20230331/config/mid002/SS1500/SalishSea1500-RUN160_GO.yaml
+    color:  'r'
+    marker: 'o'
+    lineweight: 0.7
+
+  - optfile: /project/6006412/goldford/gitlab_pyap_fork20230331/config/mid002/SS1500/SalishSea1500-RUN181_GO.yaml
+    color:  'g'
+    marker: 'o'
+    lineweight: 0.7
+
+#instruments: ['ADCP', 'CM', 'CTD', 'HTG', 'MCTD', 'SST', 'TG']
+instruments: ['CTD']
+
+analysis:
+    periods:
+      #  year2016: [2016-01-01, 2017-01-01]
+      #  year2017: [2017-01-01, 2018-01-01]
+      #  year2018: [2018-01-01, 2019-01-01]
+        hindcast: [2016-01-01, 2019-01-01]
+
+# Settings for each instrument comparison
+#TG:
+#    # for tidal constituents
+#    constituents: ['M2', 'N2', 'S2', 'O1', 'K1', 'P1', 'Q1', 'K2']
+#    exclude: []
+#    #exclude: ['NewWestminster','VancouverHarbour']
+
+#    figsize: [5, 6]
+#    layout: 2 # with differences in separate panels
+
+#    # for residual
+#    # Station names in tide gauge list (with underscores removed)
+#    #stations: ["08MH028","08MH053","New Westminster", "Sand Heads", "Steveston", "StevestonEC", "Woodward's Landing"]
+
+#    # cutoff period for a low-pass filter (days), set to None for no smoothing
+#    smooth_residual_diff: 5 # apply 5-day smoother
+
+HTG:
+    figsize: [12, 6]
+
+
+CTD:
+    domain_file: /project/6006412/goldford/gitlab_pyap_fork20230331/config/CTD_analysis_domain_config_template-SalishSea.yml
+
+#file_formats: ['png', 'pdf', 'svg']
+file_formats: ['png']
+  
+# Override some options
+parallel: True
+nproc: 44
