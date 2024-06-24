@@ -1,6 +1,6 @@
 Files to support manuscript submitted to Geoscientific Model Development related to the HOTSSea v1 model. GMD-2024-58.  
   
-[![DOI](https://zenodo.org/badge/767739309.svg)](https://zenodo.org/doi/10.5281/zenodo.10846148)  
+ 
 
 repo structure
 <code>
