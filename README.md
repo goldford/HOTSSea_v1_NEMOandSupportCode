@@ -10,7 +10,7 @@ desktop
 |--> code  
 |   |  
 |   |--> manuscript_figs  
-|   |	[desktop PC code for manuscript plots]  
+|   |	[desktop PC code for most manuscript plots; ORAS5.. code and Fig 3 code (see pypkg/etc) are meant to run on server]  
 |   |  
 |   |--> data_prep  
 |   |	[notebooks etc for prepping data]  
@@ -52,11 +52,21 @@ serverside
 |		[NEMO v3.6 software]  
 |  
 |-->other scripts  
-|	[custom scripts (other than pypkg) used for data prep, extraction, and analysis]  
-|  
+|	|[custom scripts (other than pypkg) used for data prep, extraction, and analysis]  
+|   |
+|   |--> 'ORAS5..' - temperature bias correction (Fig 3)
+|
 |-->pypkg  
-|	[NEMO-model python 'analysis package' used for mod-obs and statistics, under development, not for redist]  
+|	|[NEMO-model python 'analysis package' used for mod-obs and statistics, under development, not for redist]
+|	|
+|	|-->etc
+|	   [batch job submission scripts. Look to plot_CTD_comparison.sh for script to generate Fig 3]
 |  
 |-->ANALYSIS  
-	[outputs from running pypkg scripts, mainly model-obs stats]  
+	|[outputs from running pypkg scripts, mainly model-obs stats] 
+	|
+	|--> SalishSea1500-ALLRUNS_test/CTD/hindcast
+	|     [outputs of running the analysis used to generate Fig 3]
+	|
+	|-->
 </code>
