@@ -125,6 +125,7 @@ for var_ts in var_codes:
         ax = plt.gca()
         ax.text(-0.08, 1.75, "(a)", ha="left", va="top", fontsize=12)
         ax.text(0.75, 1.75, "Temperature", ha="center", va="top", fontsize=14)
+        titleRMS = 'on'
 
     elif var_ts == 'S':
         ax = fig.add_subplot(gs[1:6, 6:11])
@@ -137,17 +138,18 @@ for var_ts in var_codes:
         ax.text(-0.08, 2.9, "(b)", ha="left", va="top", fontsize=12)
         ax.text(1.25, 2.9, "Salinity", ha="center", va="top", fontsize=14)
         # ax.text(0.75, -0.3, "Salinity", ha="center", va="top", fontsize=14)
+        titleRMS = 'off'
 
     # the sm.taylor_diagram code uses the current active axis
     sm.taylor_diagram(1, 0, 1, numberPanels=1, axismax=axismax,
                       styleCOR='-', colCOR='#848484',widthcor=0.8,
                       styleSTD='-', colSTD='#848484', tickSTD=tickSTD,  widthstd=0.8,# rincSTD=rincSTD,
-                      styleRMS='--', colRMS='#848484', titleRMS='off', labelRMS='NCRMSD', widthRMS=0.8,
-                      rmsLabelFormat='0:.1f', tickRMS=tickRMS,
+                      styleRMS='--', colRMS='#848484', titleRMS=titleRMS, labelRMS='NCRMSE', widthRMS=0.8,
+                      rmsLabelFormat='0:.1f', tickRMS=tickRMS, titlermsdangle=120, # determins where on circle label goes
                       markerOBS='*', colOBS='k', markerSize=msize1,
                       overlay='off')
 
-    for run in modelruns_info.keys():
+    for run in modelruns_info.keys()=x
         # hack
         if run == 'SalishSea1500-RUN216-altSST':
             run_sname = 'SalishSea1500-RUN216'
@@ -488,7 +490,8 @@ for var_ts in var_codes:
                                       axismax=axismax,
                                       circles=circles_trg,
                                       circlelinewidth=0.8,
-                                      circlelinespec='0.75--', # not compatible?
+                                      circlelinespec='--', # not compatible?
+                                      # circlelinespec='0.75--',  # not compatible? 2024-09
                                       #circlelinespec='k--',
                                       markersymbol=marker_dict['marker'],
                                       markercolor=mf_colour,
@@ -576,7 +579,7 @@ for var_ts in var_codes:
                                         # shrink_factor=0.2,
                                         mutation_scale=arrow_mutatescale,
                                         facecolor=mf_colour,
-                                        edgecolor=mf_colour,
+                                        edgecolor=me_colour,
                                         lw=arrow_lw,
                                         ls='--',
                                         zorder=1
@@ -650,7 +653,7 @@ ax_leg.legend(handles = legend_mark_sorted,
                     handletextpad=0.2,
                     fontsize=8)
 plt.tight_layout()
-plt.savefig('../../figs/Fig07.png', dpi=300)
-plt.savefig('../../figs/Fig07.pdf', dpi=300)
+plt.savefig('../../figs/Fig07_revised.png', dpi=300)
+plt.savefig('../../figs/Fig07_revised.pdf', dpi=300)
 plt.show()
 
