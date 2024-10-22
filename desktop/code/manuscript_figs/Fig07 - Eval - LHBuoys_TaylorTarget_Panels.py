@@ -149,7 +149,7 @@ for var_ts in var_codes:
                       markerOBS='*', colOBS='k', markerSize=msize1,
                       overlay='off')
 
-    for run in modelruns_info.keys()=x
+    for run in modelruns_info.keys():
         # hack
         if run == 'SalishSea1500-RUN216-altSST':
             run_sname = 'SalishSea1500-RUN216'

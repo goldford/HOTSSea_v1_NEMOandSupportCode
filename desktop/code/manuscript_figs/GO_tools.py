@@ -19,6 +19,50 @@ import datetime as dt
 import csv
 from scipy.interpolate import interp1d
 from scipy.stats import norm
+import yaml
+
+def load_yaml(yamlfile):
+    """ Helper to load a YAML
+    """
+    def date_to_datetime(loader, node):
+        """ The default YAML loader interprets YYYY-MM-DD as a datetime.date object
+            Here we override this with a datetime.datetime object with implicit h,m,s=0,0,0 """
+        d = yaml.constructor.SafeConstructor.construct_yaml_timestamp(loader,node)
+        if type(d) is dt.date:
+            d = dt.datetime.combine(d, dt.time(0, 0, 0))
+        return d
+    yaml.constructor.SafeConstructor.yaml_constructors[u'tag:yaml.org,2002:timestamp'] = date_to_datetime
+    with open(yamlfile, 'r') as ya:
+        try:
+            yamldata = yaml.safe_load(ya)
+        except Exception as e:
+            print("Error importing YAML file {} {})".format(yamlfile,e))
+            raise
+    return yamldata
+def read_sdomains(domain_file):
+    try:
+        data = load_yaml(domain_file)
+    except FileNotFoundError:
+        print("WARNING:\n domain_file {} not found".format(domain_file))
+
+    coords = {}
+    for c in data['polygon_coords'].keys():
+        coords[c] = np.asarray(data['polygon_coords'][c])
+        # make sure the polygon is closed
+        if not np.all(coords[c][-1] == coords[c][0]):
+            coords[c] = np.vstack([coords[c], coords[c][0, :]])
+
+    return coords
+
+def is_leap_year(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+def buildSortableString(number, nZeros):
+    newstring = str(number)
+    while (len(newstring) < nZeros) :
+        tmpstr = "0" + newstring
+        newstring = tmpstr
+    return newstring
 
 # this is for manually computing Theil-Sen or Sen's Slope
 # from here https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mstats.sen_seasonal_slopes.html
@@ -798,6 +842,8 @@ def depth_int(data_in, depth_min, depth_max, gdept_0, e3t0):
     max_idx = np.argmin(diffs_max)
     e3t0_2 = e3t0[min_idx:max_idx + 1]
 
+
+
     # !this assumes data and mask have same depth strata!
     data_in_trim = data_in[min_idx:max_idx + 1]
 
@@ -821,3 +867,98 @@ def depth_int(data_in, depth_min, depth_max, gdept_0, e3t0):
     dat_avg = dat_avg.where(dat_avg != 0, np.nan)
 
     return(dat_avg)
+
+# borrowed from pypkg 2024-10
+# def interp_weights_1d(zi, z, zmask=None, extrap_threshold=None):
+#     """ 1d linear interpolation indices and weights.
+#
+#     Works on n-d arrays along 1st dimension.
+#
+#     Parameters
+#     ----------
+#         zi : array_like of shape (n,d1,...)
+#             N-d array or scalar. Coordinate of `n` points to interpolate to.
+#         z : array_like of shape (m,d1,...)
+#             Points to interpolate from. Second and subsequent dimensions must
+#             match those of `zi`.
+#         zmask : array_like of shape (m,d1,...), optional
+#             Mask for `z` with 0's for invalid points.
+#         extrap_threshold : float, optional
+#             Extrapolate no further that the threshold (same units as `z` and `zi`).
+#             No threshold by default.
+#
+#     Returns
+#     -------
+#         i1 : array_like of shape (n,d1,...)
+#         i2 : array_like of shape (n,d1,...)
+#             Interpolation indices, ravelled to use with (m,d1,...) arrays.
+#         w1 : array_like of shape (n,d1,...)
+#         w2 : array_like of shape (n,d1,...)
+#             Corresponding weights.
+#
+#     Example
+#     -------
+#     To apply indices and weights:
+#         vi = np.take(v,i1)*w1 + np.take(v,i2)*w2 # where v has z.shape
+#     """
+#     # generalize for inputs of various shapes, including scalars
+#     scalar = np.isscalar(zi)
+#     if not scalar:
+#         sz = zi.shape
+#     zi, z = atleast_2d0(zi, z)
+#
+#     n = zi.shape[0]
+#     i1, i2 = [np.zeros(zi.shape, dtype=np.int32) for i in range(2)]  # initialize
+#     w1, w2 = [np.full(zi.shape, np.nan) for i in range(2)]  # initialize
+#
+#     # deal with completely masked nodes
+#     if zmask is not None:
+#         allmasked = np.all(zmask == 0, axis=0)
+#         nodes = np.where(~allmasked)[0]  # not masked
+#     else:
+#         nodes = range(zi.shape[1])  # all nodes
+#
+#     for kl in nodes:
+#         if zmask is not None:
+#             zm = zmask[:, kl]
+#             i1[:, kl], i2[:, kl], w1[:, kl], w2[:, kl] = vinterp1d(zi[:, kl], z[zm, kl], extrap_threshold)
+#         else:
+#             i1[:, kl], i2[:, kl], w1[:, kl], w2[:, kl] = vinterp1d(zi[:, kl], z[:, kl], extrap_threshold)
+#
+#     # ravel indices for subsequent indexing of arrays
+#     dim1 = zi.shape[1:]  # 2nd and subsequent dimensions
+#     dim1prod = np.prod(dim1)  # number of nodes
+#     # indices of all columns (ravelled for 2nd and subsequent dimensions) tiled n times
+#     ic = np.repeat(np.arange(dim1prod, dtype=int).reshape(dim1)[None, :], n, axis=0)
+#     i1 = np.ravel_multi_index((i1, ic), (z.shape[0], dim1prod))
+#     i2 = np.ravel_multi_index((i2, ic), (z.shape[0], dim1prod))
+#
+#     if scalar:
+#         i1 = np.asscalar(i1)
+#         i2 = np.asscalar(i2)
+#     else:
+#         # keep dimensions of the input zi
+#         i1 = i1.reshape(sz)
+#         i2 = i2.reshape(sz)
+#
+#     return i1, i2, w1, w2
+
+
+# def vinterp1d(gdepr, z, extrap_threshold):
+#     n = len(z)
+#     i2 = np.searchsorted(z, gdepr, side='right')
+#     ileft = i2==0  # dst layers shallower than 1st src layer
+#     irght = i2==n  # dst layers deeper than last src layer
+#     i2[ileft] = 1
+#     i2[irght] = n-1
+#     i1 = i2 - 1
+#     w1 = (z[i2] - gdepr) / (z[i2] - z[i1])
+#     w1[ileft] = 1  # this is nearest neighbour extrapolation to shallower layers
+#     w1[irght] = 0  # this is nearest neighbour extrapolation to deeper layers
+#     if extrap_threshold is not None:
+#         # drop points beyond extrap threshold
+#         invalid = np.logical_or(gdepr < z[ 0] - extrap_threshold,
+#                                 gdepr > z[-1] + extrap_threshold)
+#         w1[invalid] = np.nan
+#     w2 = 1 - w1
+#     return i1,i2,w1,w2
