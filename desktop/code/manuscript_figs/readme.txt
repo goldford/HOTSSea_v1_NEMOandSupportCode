@@ -1,12 +1,10 @@
-G Oldford, March 2024
+G Oldford, March 2024 (update Jan 2025)
 g.oldford@dfo-mpo.gc.ca; greig.oldford@gmail.com
 
 Python notebooks (Python 3.9x) have .ipynb extension
 Any files with .ksh extension are meant to be run on unix server
 The .py files were developed using PyCharm
 .qgz file extension is QGIS map file
-
-please contact greig.oldford@dfo-mpo.gc.ca if you would like source data
 
 Figs 3 and 4 generated using scripts on unix server hosting model outputs
 Requires custom python library currently referred to as 'pyap', configured for the server

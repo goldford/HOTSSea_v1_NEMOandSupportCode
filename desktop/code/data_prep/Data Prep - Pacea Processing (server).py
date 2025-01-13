@@ -81,6 +81,8 @@ end_yr = 1980
 start_mo = 1
 end_mo = 12
 
+
+
 # copy NC structure from a given input file
 def create_nc_file_from_template(template_file, output_filename, var, var_name, time_len, dep_bin, stat):
     with nc.Dataset(template_file, 'r') as template:

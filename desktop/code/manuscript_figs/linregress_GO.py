@@ -3,6 +3,15 @@
 import numpy as np
 import scipy
 
+# I added this here in final revision because could not access this function as below (GO -2025)
+def _ttest_finish(df,t,alternative='two-sided'):
+    """Common code between all 3 t-test functions."""
+    prob = scipy.stats.distributions.t.sf(np.abs(t), df) * 2  # use np.abs to get upper tail
+    if t.ndim == 0:
+        t = t[()]
+
+    return t, prob
+
 def linregress_GO(x, y=None, n=None, alternative='two-sided'):
     """
     Calculate a linear least-squares regression for two sets of measurements.
@@ -156,7 +165,10 @@ def linregress_GO(x, y=None, n=None, alternative='two-sided'):
         # n-2 degrees of freedom because 2 has been used up
         # to estimate the mean and standard deviation
         t = r * np.sqrt(df / ((1.0 - r + TINY)*(1.0 + r + TINY)))
-        t, prob = scipy.stats._stats_py._ttest_finish(df, t, alternative)
+
+        #t, prob = scipy.stats._stats_py._ttest_finish(df, t, alternative)
+        # this was problem in 2025 so replaced with the function above
+        t, prob = _ttest_finish(df, t, alternative)
 
         slope_stderr = np.sqrt((1 - r**2) * ssym / ssxm / df)
 
